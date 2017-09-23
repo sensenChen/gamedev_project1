@@ -9,10 +9,11 @@ class MazeGeneration {
   static var check:Array<Array<Array<Int> > > = [for (x in 0...M) [for (y in 0...M) [for (z in 0...4) 0 ]]];
 
   static function dfs(startR:Int, startC:Int, prevR:Int, prevC: Int, dir: Int):Void {
-		if(startR<0 || startC<0 || startR>=M || startC>=N || grid[startR][startC]==1) {
+		if(startR<0 || startC<0 || startR>=M || startC>=N || grid[startR][startC]>1
+		) {
 			return;
 		} else {
-			grid[startR][startC] = 1;
+			grid[startR][startC] = grid[startR][startC] + 1;
 			if(prevR!=-1 && prevC!=-1) {
 				// if(check)
 				check[prevR][prevC][dir] = 1;
