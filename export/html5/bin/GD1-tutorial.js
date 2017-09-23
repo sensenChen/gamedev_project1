@@ -30,6 +30,20 @@ ApplicationMain.create = function() {
 	types.push("TEXT");
 	urls.push("assets/images/duck.png");
 	types.push("IMAGE");
+	urls.push("assets/images/h1.png");
+	types.push("IMAGE");
+	urls.push("assets/images/h2.png");
+	types.push("IMAGE");
+	urls.push("assets/images/h3.png");
+	types.push("IMAGE");
+	urls.push("assets/images/h4.png");
+	types.push("IMAGE");
+	urls.push("assets/images/h5.png");
+	types.push("IMAGE");
+	urls.push("assets/images/heart.png");
+	types.push("IMAGE");
+	urls.push("assets/images/Heart_128x192_64x64.png");
+	types.push("IMAGE");
 	urls.push("assets/images/images-go-here.txt");
 	types.push("TEXT");
 	urls.push("assets/images/Tiles.png");
@@ -78,7 +92,7 @@ ApplicationMain.init = function() {
 	}
 };
 ApplicationMain.main = function() {
-	ApplicationMain.config = { build : "102", company : "HaxeFlixel", file : "GD1-tutorial", fps : 60, name : "GD1-tutorial", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 990, parameters : "{}", resizable : false, stencilBuffer : true, title : "GD1-tutorial", vsync : true, width : 990, x : null, y : null}]};
+	ApplicationMain.config = { build : "137", company : "HaxeFlixel", file : "GD1-tutorial", fps : 60, name : "GD1-tutorial", orientation : "", packageName : "com.example.myapp", version : "0.0.1", windows : [{ antialiasing : 0, background : 0, borderless : false, depthBuffer : false, display : 0, fullscreen : false, hardware : false, height : 840, parameters : "{}", resizable : false, stencilBuffer : true, title : "GD1-tutorial", vsync : true, width : 840, x : null, y : null}]};
 };
 ApplicationMain.start = function() {
 	var hasMain = false;
@@ -2175,7 +2189,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this5.h[id] = value2;
 	}
-	id = "assets/images/images-go-here.txt";
+	id = "assets/images/h1.png";
 	var _this6 = this.path;
 	if(__map_reserved[id] != null) {
 		_this6.setReserved(id,id);
@@ -2183,13 +2197,13 @@ var DefaultAssetLibrary = function() {
 		_this6.h[id] = id;
 	}
 	var _this7 = this.type;
-	var value3 = "TEXT";
+	var value3 = "IMAGE";
 	if(__map_reserved[id] != null) {
 		_this7.setReserved(id,value3);
 	} else {
 		_this7.h[id] = value3;
 	}
-	id = "assets/images/Tiles.png";
+	id = "assets/images/h2.png";
 	var _this8 = this.path;
 	if(__map_reserved[id] != null) {
 		_this8.setReserved(id,id);
@@ -2203,7 +2217,7 @@ var DefaultAssetLibrary = function() {
 	} else {
 		_this9.h[id] = value4;
 	}
-	id = "assets/music/music-goes-here.txt";
+	id = "assets/images/h3.png";
 	var _this10 = this.path;
 	if(__map_reserved[id] != null) {
 		_this10.setReserved(id,id);
@@ -2211,13 +2225,13 @@ var DefaultAssetLibrary = function() {
 		_this10.h[id] = id;
 	}
 	var _this11 = this.type;
-	var value5 = "TEXT";
+	var value5 = "IMAGE";
 	if(__map_reserved[id] != null) {
 		_this11.setReserved(id,value5);
 	} else {
 		_this11.h[id] = value5;
 	}
-	id = "assets/sounds/sounds-go-here.txt";
+	id = "assets/images/h4.png";
 	var _this12 = this.path;
 	if(__map_reserved[id] != null) {
 		_this12.setReserved(id,id);
@@ -2225,13 +2239,13 @@ var DefaultAssetLibrary = function() {
 		_this12.h[id] = id;
 	}
 	var _this13 = this.type;
-	var value6 = "TEXT";
+	var value6 = "IMAGE";
 	if(__map_reserved[id] != null) {
 		_this13.setReserved(id,value6);
 	} else {
 		_this13.h[id] = value6;
 	}
-	id = "flixel/sounds/beep.ogg";
+	id = "assets/images/h5.png";
 	var _this14 = this.path;
 	if(__map_reserved[id] != null) {
 		_this14.setReserved(id,id);
@@ -2239,13 +2253,13 @@ var DefaultAssetLibrary = function() {
 		_this14.h[id] = id;
 	}
 	var _this15 = this.type;
-	var value7 = "SOUND";
+	var value7 = "IMAGE";
 	if(__map_reserved[id] != null) {
 		_this15.setReserved(id,value7);
 	} else {
 		_this15.h[id] = value7;
 	}
-	id = "flixel/sounds/flixel.ogg";
+	id = "assets/images/heart.png";
 	var _this16 = this.path;
 	if(__map_reserved[id] != null) {
 		_this16.setReserved(id,id);
@@ -2253,43 +2267,41 @@ var DefaultAssetLibrary = function() {
 		_this16.h[id] = id;
 	}
 	var _this17 = this.type;
-	var value8 = "SOUND";
+	var value8 = "IMAGE";
 	if(__map_reserved[id] != null) {
 		_this17.setReserved(id,value8);
 	} else {
 		_this17.h[id] = value8;
 	}
-	id = "flixel/fonts/nokiafc22.ttf";
-	var _this18 = this.className;
-	var value9 = _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf;
+	id = "assets/images/Heart_128x192_64x64.png";
+	var _this18 = this.path;
 	if(__map_reserved[id] != null) {
-		_this18.setReserved(id,value9);
+		_this18.setReserved(id,id);
 	} else {
-		_this18.h[id] = value9;
+		_this18.h[id] = id;
 	}
 	var _this19 = this.type;
-	var value10 = "FONT";
+	var value9 = "IMAGE";
 	if(__map_reserved[id] != null) {
-		_this19.setReserved(id,value10);
+		_this19.setReserved(id,value9);
 	} else {
-		_this19.h[id] = value10;
+		_this19.h[id] = value9;
 	}
-	id = "flixel/fonts/monsterrat.ttf";
-	var _this20 = this.className;
-	var value11 = _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf;
+	id = "assets/images/images-go-here.txt";
+	var _this20 = this.path;
 	if(__map_reserved[id] != null) {
-		_this20.setReserved(id,value11);
+		_this20.setReserved(id,id);
 	} else {
-		_this20.h[id] = value11;
+		_this20.h[id] = id;
 	}
 	var _this21 = this.type;
-	var value12 = "FONT";
+	var value10 = "TEXT";
 	if(__map_reserved[id] != null) {
-		_this21.setReserved(id,value12);
+		_this21.setReserved(id,value10);
 	} else {
-		_this21.h[id] = value12;
+		_this21.h[id] = value10;
 	}
-	id = "flixel/images/ui/button.png";
+	id = "assets/images/Tiles.png";
 	var _this22 = this.path;
 	if(__map_reserved[id] != null) {
 		_this22.setReserved(id,id);
@@ -2297,13 +2309,13 @@ var DefaultAssetLibrary = function() {
 		_this22.h[id] = id;
 	}
 	var _this23 = this.type;
-	var value13 = "IMAGE";
+	var value11 = "IMAGE";
 	if(__map_reserved[id] != null) {
-		_this23.setReserved(id,value13);
+		_this23.setReserved(id,value11);
 	} else {
-		_this23.h[id] = value13;
+		_this23.h[id] = value11;
 	}
-	id = "flixel/images/logo/default.png";
+	id = "assets/music/music-goes-here.txt";
 	var _this24 = this.path;
 	if(__map_reserved[id] != null) {
 		_this24.setReserved(id,id);
@@ -2311,11 +2323,111 @@ var DefaultAssetLibrary = function() {
 		_this24.h[id] = id;
 	}
 	var _this25 = this.type;
-	var value14 = "IMAGE";
+	var value12 = "TEXT";
 	if(__map_reserved[id] != null) {
-		_this25.setReserved(id,value14);
+		_this25.setReserved(id,value12);
 	} else {
-		_this25.h[id] = value14;
+		_this25.h[id] = value12;
+	}
+	id = "assets/sounds/sounds-go-here.txt";
+	var _this26 = this.path;
+	if(__map_reserved[id] != null) {
+		_this26.setReserved(id,id);
+	} else {
+		_this26.h[id] = id;
+	}
+	var _this27 = this.type;
+	var value13 = "TEXT";
+	if(__map_reserved[id] != null) {
+		_this27.setReserved(id,value13);
+	} else {
+		_this27.h[id] = value13;
+	}
+	id = "flixel/sounds/beep.ogg";
+	var _this28 = this.path;
+	if(__map_reserved[id] != null) {
+		_this28.setReserved(id,id);
+	} else {
+		_this28.h[id] = id;
+	}
+	var _this29 = this.type;
+	var value14 = "SOUND";
+	if(__map_reserved[id] != null) {
+		_this29.setReserved(id,value14);
+	} else {
+		_this29.h[id] = value14;
+	}
+	id = "flixel/sounds/flixel.ogg";
+	var _this30 = this.path;
+	if(__map_reserved[id] != null) {
+		_this30.setReserved(id,id);
+	} else {
+		_this30.h[id] = id;
+	}
+	var _this31 = this.type;
+	var value15 = "SOUND";
+	if(__map_reserved[id] != null) {
+		_this31.setReserved(id,value15);
+	} else {
+		_this31.h[id] = value15;
+	}
+	id = "flixel/fonts/nokiafc22.ttf";
+	var _this32 = this.className;
+	var value16 = _$_$ASSET_$_$flixel_$fonts_$nokiafc22_$ttf;
+	if(__map_reserved[id] != null) {
+		_this32.setReserved(id,value16);
+	} else {
+		_this32.h[id] = value16;
+	}
+	var _this33 = this.type;
+	var value17 = "FONT";
+	if(__map_reserved[id] != null) {
+		_this33.setReserved(id,value17);
+	} else {
+		_this33.h[id] = value17;
+	}
+	id = "flixel/fonts/monsterrat.ttf";
+	var _this34 = this.className;
+	var value18 = _$_$ASSET_$_$flixel_$fonts_$monsterrat_$ttf;
+	if(__map_reserved[id] != null) {
+		_this34.setReserved(id,value18);
+	} else {
+		_this34.h[id] = value18;
+	}
+	var _this35 = this.type;
+	var value19 = "FONT";
+	if(__map_reserved[id] != null) {
+		_this35.setReserved(id,value19);
+	} else {
+		_this35.h[id] = value19;
+	}
+	id = "flixel/images/ui/button.png";
+	var _this36 = this.path;
+	if(__map_reserved[id] != null) {
+		_this36.setReserved(id,id);
+	} else {
+		_this36.h[id] = id;
+	}
+	var _this37 = this.type;
+	var value20 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this37.setReserved(id,value20);
+	} else {
+		_this37.h[id] = value20;
+	}
+	id = "flixel/images/logo/default.png";
+	var _this38 = this.path;
+	if(__map_reserved[id] != null) {
+		_this38.setReserved(id,id);
+	} else {
+		_this38.h[id] = id;
+	}
+	var _this39 = this.type;
+	var value21 = "IMAGE";
+	if(__map_reserved[id] != null) {
+		_this39.setReserved(id,value21);
+	} else {
+		_this39.h[id] = value21;
 	}
 	var assetsPrefix = null;
 	if(ApplicationMain.config != null && Object.prototype.hasOwnProperty.call(ApplicationMain.config,"assetsPrefix")) {
@@ -2326,13 +2438,13 @@ var DefaultAssetLibrary = function() {
 		while(k.hasNext()) {
 			var k1 = k.next();
 			var this1 = this.path;
-			var _this26 = this.path;
-			var value15 = assetsPrefix + (__map_reserved[k1] != null ? _this26.getReserved(k1) : _this26.h[k1]);
-			var _this27 = this1;
+			var _this40 = this.path;
+			var value22 = assetsPrefix + (__map_reserved[k1] != null ? _this40.getReserved(k1) : _this40.h[k1]);
+			var _this41 = this1;
 			if(__map_reserved[k1] != null) {
-				_this27.setReserved(k1,value15);
+				_this41.setReserved(k1,value22);
 			} else {
-				_this27.h[k1] = value15;
+				_this41.h[k1] = value22;
 			}
 		}
 	}
@@ -4837,6 +4949,41 @@ flixel_FlxSprite.prototype = $extend(flixel_FlxObject.prototype,{
 	,__class__: flixel_FlxSprite
 	,__properties__: $extend(flixel_FlxObject.prototype.__properties__,{set_clipRect:"set_clipRect",set_color:"set_color",set_blend:"set_blend",set_flipY:"set_flipY",set_flipX:"set_flipX",set_facing:"set_facing",set_alpha:"set_alpha",set_graphic:"set_graphic",set_frames:"set_frames",set_frame:"set_frame",set_pixels:"set_pixels",get_pixels:"get_pixels",set_antialiasing:"set_antialiasing",set_useFramePixels:"set_useFramePixels"})
 });
+var Enemy = function() {
+	this.speed = 140;
+	flixel_FlxSprite.call(this);
+	this.loadGraphic("assets/images/duck.png",true,100,114);
+	this._facingFlip.set(1,{ x : true, y : false});
+	this._facingFlip.set(16,{ x : false, y : false});
+	this.animation.add("walk",[0,1,0,2],5,true);
+	this.drag.set_x(this.drag.set_y(2000));
+};
+$hxClasses["Enemy"] = Enemy;
+Enemy.__name__ = ["Enemy"];
+Enemy.__super__ = flixel_FlxSprite;
+Enemy.prototype = $extend(flixel_FlxSprite.prototype,{
+	update: function(elapsed) {
+		flixel_FlxSprite.prototype.update.call(this,elapsed);
+		this.movement();
+	}
+	,movement: function() {
+		if((this.velocity.x != 0 || this.velocity.y != 0) && this.touching == 0) {
+			if(Math.abs(this.velocity.x) > Math.abs(this.velocity.y)) {
+				if(this.velocity.x < 0) {
+					this.set_facing(1);
+				} else {
+					this.set_facing(16);
+				}
+			} else if(this.velocity.y < 0) {
+				this.set_facing(256);
+			} else {
+				this.set_facing(4096);
+			}
+			this.animation.play("walk");
+		}
+	}
+	,__class__: Enemy
+});
 var flixel_group_FlxTypedSpriteGroup = function(X,Y,MaxSize) {
 	if(MaxSize == null) {
 		MaxSize = 0;
@@ -5678,13 +5825,13 @@ var HUD = function(p) {
 	this.scrollFactor.set_x(0);
 	this.scrollFactor.set_y(0);
 	this.healthDisplay = new flixel_text_FlxText(2,2);
-	this.hp = 5;
-	this.maxHp = 10;
+	this.hp = 1000;
+	this.maxHp = 1000;
 	this.add(this.healthDisplay);
 	this.levelDisplay = new flixel_text_FlxText(2,12);
 	this.level = 1;
 	this.add(this.levelDisplay);
-	this.healthBar = new flixel_ui_FlxBar(4,25,flixel_ui_FlxBarFillDirection.LEFT_TO_RIGHT,100,4,p,"health",0,10,false);
+	this.healthBar = new flixel_ui_FlxBar(4,25,flixel_ui_FlxBarFillDirection.LEFT_TO_RIGHT,30,4,p,"health",0,10,false);
 	this.healthBar.createFilledBar(-10271220,-1660369);
 	this.add(this.healthBar);
 };
@@ -5692,7 +5839,10 @@ $hxClasses["HUD"] = HUD;
 HUD.__name__ = ["HUD"];
 HUD.__super__ = flixel_group_FlxTypedSpriteGroup;
 HUD.prototype = $extend(flixel_group_FlxTypedSpriteGroup.prototype,{
-	update: function(elapsed) {
+	updateHUD: function(health) {
+		this.hp = health;
+	}
+	,update: function(elapsed) {
 		flixel_group_FlxTypedSpriteGroup.prototype.update.call(this,elapsed);
 		this.healthDisplay.set_text("Health: " + this.hp + "/" + this.maxHp);
 		this.levelDisplay.set_text("Level:" + this.level);
@@ -5833,6 +5983,76 @@ _$List_ListIterator.prototype = {
 	,__class__: _$List_ListIterator
 };
 Math.__name__ = ["Math"];
+var MazeGeneration = function() { };
+$hxClasses["MazeGeneration"] = MazeGeneration;
+MazeGeneration.__name__ = ["MazeGeneration"];
+MazeGeneration.dfs = function(startR,startC,prevR,prevC,dir) {
+	if(startR < 0 || startC < 0 || startR >= MazeGeneration.M || startC >= MazeGeneration.N || MazeGeneration.grid[startR][startC] == 1) {
+		return;
+	} else {
+		MazeGeneration.grid[startR][startC] = 1;
+		if(prevR != -1 && prevC != -1) {
+			MazeGeneration.check[prevR][prevC][dir] = 1;
+		}
+	}
+	var random = new flixel_math_FlxRandom();
+	var rd = [0,1,2,3];
+	random.shuffle_Int(rd);
+	var _g = 0;
+	while(_g < 4) {
+		var x = _g++;
+		if(rd[x] == 0) {
+			MazeGeneration.dfs(startR - 1,startC,startR,startC,rd[x]);
+		} else if(rd[x] == 1) {
+			MazeGeneration.dfs(startR,startC + 1,startR,startC,rd[x]);
+		} else if(rd[x] == 2) {
+			MazeGeneration.dfs(startR + 1,startC,startR,startC,rd[x]);
+		} else {
+			MazeGeneration.dfs(startR,startC - 1,startR,startC,rd[x]);
+		}
+	}
+};
+MazeGeneration.generateMaze = function(rows,cols) {
+	MazeGeneration.M = rows;
+	MazeGeneration.N = cols;
+	MazeGeneration.dfs(0,0,-1,-1,0);
+	var _g1 = 0;
+	var _g = MazeGeneration.M;
+	while(_g1 < _g) {
+		var i = _g1++;
+		var _g3 = 0;
+		var _g2 = MazeGeneration.N;
+		while(_g3 < _g2) {
+			var j = _g3++;
+			MazeGeneration.display[2 * i + 1][2 * j + 1] = 0;
+		}
+	}
+	var _g11 = 0;
+	var _g4 = MazeGeneration.M;
+	while(_g11 < _g4) {
+		var i1 = _g11++;
+		var _g31 = 0;
+		var _g21 = MazeGeneration.N;
+		while(_g31 < _g21) {
+			var j1 = _g31++;
+			if(MazeGeneration.check[i1][j1][0] == 1) {
+				MazeGeneration.display[2 * i1 + 1 - 1][2 * j1 + 1] = 0;
+			}
+			if(MazeGeneration.check[i1][j1][1] == 1) {
+				MazeGeneration.display[2 * i1 + 1][2 * j1 + 1 + 1] = 0;
+			}
+			if(MazeGeneration.check[i1][j1][2] == 1) {
+				MazeGeneration.display[2 * i1 + 1 + 1][2 * j1 + 1] = 0;
+			}
+			if(MazeGeneration.check[i1][j1][3] == 1) {
+				MazeGeneration.display[2 * i1 + 1][2 * j1 + 1 - 1] = 0;
+			}
+		}
+	}
+	return MazeGeneration.display;
+};
+MazeGeneration.main = function() {
+};
 var flixel_group_FlxTypedGroup = function(MaxSize) {
 	if(MaxSize == null) {
 		MaxSize = 0;
@@ -6459,7 +6679,7 @@ NMEPreloader.prototype = $extend(openfl_display_Sprite.prototype,{
 		return 0;
 	}
 	,getHeight: function() {
-		var height = 990;
+		var height = 840;
 		if(height > 0) {
 			return height;
 		} else {
@@ -6467,7 +6687,7 @@ NMEPreloader.prototype = $extend(openfl_display_Sprite.prototype,{
 		}
 	}
 	,getWidth: function() {
-		var width = 990;
+		var width = 840;
 		if(width > 0) {
 			return width;
 		} else {
@@ -6497,20 +6717,51 @@ PlayState.__super__ = flixel_FlxState;
 PlayState.prototype = $extend(flixel_FlxState.prototype,{
 	create: function() {
 		flixel_FlxState.prototype.create.call(this);
+		var arr = MazeGeneration.generateMaze(10,10);
 		this._level = new flixel_tile_FlxTilemap();
-		this._level.loadMapFromCSV("assets/data/test.csv","assets/images/Tiles.png",32,32,flixel_tile_FlxTilemapAutoTiling.AUTO);
+		this._level.loadMapFrom2DArray(arr,"assets/images/Tiles.png",20,20,flixel_tile_FlxTilemapAutoTiling.AUTO);
+		this._level.scale.set(2,2);
 		this.add(this._level);
+		this.h1 = new flixel_FlxSprite(500,100);
+		this.h1.loadGraphic("assets/images/h1.png",false,64,64);
+		this.add(this.h1);
+		this.h2 = new flixel_FlxSprite(570,100);
+		this.h2.loadGraphic("assets/images/h2.png",false,64,64);
+		this.add(this.h2);
+		this.h3 = new flixel_FlxSprite(640,100);
+		this.h3.loadGraphic("assets/images/h3.png",false,64,64);
+		this.add(this.h3);
+		this.h4 = new flixel_FlxSprite(710,100);
+		this.h4.loadGraphic("assets/images/h4.png",false,64,64);
+		this.add(this.h4);
+		this.h5 = new flixel_FlxSprite(780,100);
+		this.h5.loadGraphic("assets/images/h5.png",false,64,64);
+		this.add(this.h5);
 		this._player = new Player();
-		this._player.scale.set(.32,.32);
-		this._player.set_x(32);
-		this._player.set_y(32);
+		this._player.scale.set(.30,.30);
+		this._player.set_x(40);
+		this._player.set_y(50);
 		this._player.updateHitbox();
+		this._player.health = 1000;
 		this.add(this._player);
-		this.hud = new HUD(this._player);
-		this.add(this.hud);
+		this._enemy = new Enemy();
+		this._enemy.scale.set(.30,.30);
+		this._enemy.set_x(50);
+		this._enemy.set_y(50);
+		this._enemy.updateHitbox();
+		this.add(this._enemy);
+		this._hud = new HUD(this._player);
+		this.add(this._hud);
 	}
 	,update: function(elapsed) {
-		flixel_FlxG.overlap(this._level,this._player,null,flixel_FlxObject.separate);
+		flixel_FlxG.overlap(this._player,this._level,null,flixel_FlxObject.separate);
+		this._player.setColorTransform(.5,.5,.5,.5,0,0,0,0);
+		flixel_FlxG.overlap(this._enemy,this._level,null,flixel_FlxObject.separate);
+		flixel_FlxG.overlap(this._enemy,this._player);
+		if(flixel_util_FlxCollision.pixelPerfectCheck(this._player,this._enemy)) {
+			this._player.health -= 1;
+			this._hud.updateHUD(this._player.health);
+		}
 		flixel_FlxState.prototype.update.call(this,elapsed);
 	}
 	,__class__: PlayState
@@ -10372,7 +10623,19 @@ flixel_math_FlxRandom.rangeBound = function(Value) {
 	return (lowerBound > 2147483646 ? 2147483646 : lowerBound) | 0;
 };
 flixel_math_FlxRandom.prototype = {
-	getObject_flixel_group_FlxTypedGroup_T: function(Objects,WeightsArray,StartIndex,EndIndex) {
+	shuffle_Int: function(array) {
+		var maxValidIndex = array.length - 1;
+		var _g1 = 0;
+		var _g = maxValidIndex;
+		while(_g1 < _g) {
+			var i = _g1++;
+			var j = this["int"](i,maxValidIndex);
+			var tmp = array[i];
+			array[i] = array[j];
+			array[j] = tmp;
+		}
+	}
+	,getObject_flixel_group_FlxTypedGroup_T: function(Objects,WeightsArray,StartIndex,EndIndex) {
 		if(StartIndex == null) {
 			StartIndex = 0;
 		}
@@ -77177,6 +77440,77 @@ flixel_FlxObject._secondSeparateFlxRect = (function($this) {
 	var rect = _this;
 	rect._inPool = false;
 	$r = rect;
+	return $r;
+}(this));
+MazeGeneration.M = 10;
+MazeGeneration.N = 10;
+MazeGeneration.grid = (function($this) {
+	var $r;
+	var _g = [];
+	{
+		var _g2 = 0;
+		var _g1 = MazeGeneration.M;
+		while(_g2 < _g1) {
+			var x = _g2++;
+			var _g3 = [];
+			var _g5 = 0;
+			var _g4 = MazeGeneration.N;
+			while(_g5 < _g4) {
+				var y = _g5++;
+				_g3.push(0);
+			}
+			_g.push(_g3);
+		}
+	}
+	$r = _g;
+	return $r;
+}(this));
+MazeGeneration.display = (function($this) {
+	var $r;
+	var _g = [];
+	{
+		var _g2 = 0;
+		var _g1 = 2 * MazeGeneration.M + 2;
+		while(_g2 < _g1) {
+			var x = _g2++;
+			var _g3 = [];
+			var _g5 = 0;
+			var _g4 = 2 * MazeGeneration.N + 2;
+			while(_g5 < _g4) {
+				var y = _g5++;
+				_g3.push(1);
+			}
+			_g.push(_g3);
+		}
+	}
+	$r = _g;
+	return $r;
+}(this));
+MazeGeneration.check = (function($this) {
+	var $r;
+	var _g = [];
+	{
+		var _g2 = 0;
+		var _g1 = MazeGeneration.M;
+		while(_g2 < _g1) {
+			var x = _g2++;
+			var _g3 = [];
+			var _g5 = 0;
+			var _g4 = MazeGeneration.M;
+			while(_g5 < _g4) {
+				var y = _g5++;
+				var _g6 = [];
+				var _g7 = 0;
+				while(_g7 < 4) {
+					var z = _g7++;
+					_g6.push(0);
+				}
+				_g3.push(_g6);
+			}
+			_g.push(_g3);
+		}
+	}
+	$r = _g;
 	return $r;
 }(this));
 Xml.Element = 0;

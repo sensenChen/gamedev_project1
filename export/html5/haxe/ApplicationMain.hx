@@ -42,6 +42,34 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.IMAGE);
 		
 		
+		urls.push ("assets/images/h1.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/h2.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/h3.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/h4.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/h5.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/heart.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
+		urls.push ("assets/images/Heart_128x192_64x64.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/images/images-go-here.txt");
 		types.push (lime.Assets.AssetType.TEXT);
 		
@@ -143,7 +171,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "102",
+			build: "137",
 			company: "HaxeFlixel",
 			file: "GD1-tutorial",
 			fps: 60,
@@ -161,13 +189,13 @@ class ApplicationMain {
 					display: 0,
 					fullscreen: false,
 					hardware: false,
-					height: 990,
+					height: 840,
 					parameters: "{}",
 					resizable: false,
 					stencilBuffer: true,
 					title: "GD1-tutorial",
 					vsync: true,
-					width: 990,
+					width: 840,
 					x: null,
 					y: null
 				},
@@ -185,7 +213,7 @@ class ApplicationMain {
 		
 		#if (js && html5)
 		#if (munit || utest)
-		openfl.Lib.embed (null, 990, 990, "000000");
+		openfl.Lib.embed (null, 840, 840, "000000");
 		#end
 		#else
 		create ();
