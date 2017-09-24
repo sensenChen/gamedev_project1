@@ -24,6 +24,10 @@ class PlayState extends FlxState
 	var h4:FlxSprite;
 	var h5:FlxSprite;
 	var heart:FlxSprite;
+
+	var points:Array<Array<Int> >;
+	var hearts:Array<Int>; 
+	var enemies:Array<Int>; 
 	
 	private var _level:FlxTilemap;
 	private var _hud: HUD;
@@ -31,48 +35,10 @@ class PlayState extends FlxState
 	override public function create():Void
 	{	
 		super.create();
-		var M = 10;
-		var N = 10;
+		var M = 15;
+		var N = 15;
 		var arr = MazeGeneration.generateMaze(M,N);
-		var points:Array<Array<Int> > = [for (x in 0...((2*M-1)*(2*N-1))) [for (y in 0...2) 0]];
-		for(i in 0...(2*M-1)) {
-			for(j in 0...(2*N-1)) {
-				points[i*(2*M-1) +j][0] = i;
-				points[i*(2*M-1) +j][1] = j;
-			}
-		}
-
-		var hearts:Array<Int> = getCenters((2*M-1), (2*N-1), points, 5);
-		var enemies:Array<Int> = getCenters((2*M-1), (2*N-1), points, 10);
-
-		// hearts.sort(<);
-		// enemies.sort(<);
-
-		// for(i in 0...10) {
-    	// 	for(j in 0...5) {
-      	// 		if(enemies[i]==hearts[j])
-        // 			hearts[j]++;
-    	// 	}
-  		// }
-
-		for(i in enemies) {
-    		var enemyX = points[i][0]+1;
-    		var enemyY = points[i][1]+1;
-  		}
-
-		for(i in hearts) {
-    		var heartX = points[i][0]+1;
-    		var hearyY = points[i][1]+1;
-  		}	
-
-
-		for(i in enemies) {
-    		var x = points[i][0]+1;
-    		var y = points[i][1]+1;
-    		var path:Array<Int> = generatePath(display, x, y, 10);
-		}
-
-
+		load(M,N);
 
 		// add map
 		_level = new FlxTilemap();
@@ -140,5 +106,35 @@ class PlayState extends FlxState
 			_hud.updateHUD(_player.health);
 		}
 		super.update(elapsed);
+	}
+
+	function load(M:Int, N:Int):Void {
+		points = [for (x in 0...((2*M-1)*(2*N-1))) [for (y in 0...2) 0]];
+		for(i in 0...(2*M-1)) {
+			for(j in 0...(2*N-1)) {
+				points[i*(2*M-1) +j][0] = i;
+				points[i*(2*M-1) +j][1] = j;
+			}
+		}
+
+		hearts = getCenters((2*M-1), (2*N-1), points, 5);
+		enemies = getCenters((2*M-1), (2*N-1), points, 10);
+
+		for(i in enemies) {
+    		var enemyX = points[i][0]+1;
+    		var enemyY = points[i][1]+1;
+  		}
+
+		for(i in hearts) {
+    		var heartX = points[i][0]+1;
+    		var heartY = points[i][1]+1;
+  		}	
+
+		for(i in enemies) {
+    		var x = points[i][0]+1;
+    		var y = points[i][1]+1;
+    		var path:Array<Int> = generatePath(display, x, y, 10);
+			// trace(path);
+		}
 	}
 }

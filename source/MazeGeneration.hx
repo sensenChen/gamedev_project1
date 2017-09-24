@@ -162,7 +162,7 @@ class MazeGeneration {
 	// 2 = heart
 	// 3 = enemy
 	static function isvalid(display:Array<Array<Int> >,i:Int, j:Int):Bool {
-  	if(i<=0 || j<=0 || i>=M-1 || j>=N-1) return false;
+  	if(i<=0 || j<=0 || i>=2*M-1 || j>=2*N-1) return false;
   	if(display[i][j]==1 || display[i][j]==2 || display[i][j]==3) return false;
   	return true;
 	}
@@ -174,9 +174,6 @@ class MazeGeneration {
 		var prev = -1;
   	var prevdir = -1;
   	var valid = true;
-
-  	var rowsize = 2*M-1;
-  	var colsize = 2*N-1;
 
 	  var r = row;
   	var c = col;
