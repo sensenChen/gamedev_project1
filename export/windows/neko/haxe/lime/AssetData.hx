@@ -22,6 +22,18 @@ class AssetData {
 			type.set ("assets/data/test.csv", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/images/duck.png", "assets/images/duck.png");
 			type.set ("assets/images/duck.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/h1.png", "assets/images/h1.png");
+			type.set ("assets/images/h1.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/h2.png", "assets/images/h2.png");
+			type.set ("assets/images/h2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/h3.png", "assets/images/h3.png");
+			type.set ("assets/images/h3.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/h4.png", "assets/images/h4.png");
+			type.set ("assets/images/h4.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/h5.png", "assets/images/h5.png");
+			type.set ("assets/images/h5.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/heart.png", "assets/images/heart.png");
+			type.set ("assets/images/heart.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Heart_128x192_64x64.png", "assets/images/Heart_128x192_64x64.png");
 			type.set ("assets/images/Heart_128x192_64x64.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/images-go-here.txt", "assets/images/images-go-here.txt");
