@@ -515,7 +515,11 @@ class ApplicationMain {
 		
 		config = {
 			
+<<<<<<< Updated upstream
 			build: "147",
+=======
+			build: "6",
+>>>>>>> Stashed changes
 			company: "HaxeFlixel",
 			file: "GD1-tutorial",
 			fps: 60,
