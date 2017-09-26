@@ -7,7 +7,7 @@ import flixel.FlxG;
 import flixel.math.FlxVelocity;
 class Enemy extends FlxSprite
  {
-     public var speed:Float = 140;
+     public var speed:Float = 200;
      public var etype(default, null):Int;
 	 private var _brain:FSM;
 	 private var _idleTmr:Float;

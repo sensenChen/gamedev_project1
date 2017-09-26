@@ -23,8 +23,8 @@ class HUD extends FlxSpriteGroup
 		scrollFactor.y = 0;
 		
 		healthDisplay = new FlxText(2, 2);
-		hp = 1000;
-		maxHp = 1000;
+		hp = 0;
+		maxHp = 5;
 		add(healthDisplay);
 		
 		levelDisplay = new FlxText(2, 12);
@@ -32,7 +32,7 @@ class HUD extends FlxSpriteGroup
 		add(levelDisplay);
 		
 		healthBar = new FlxBar(4, 25, FlxBarFillDirection.LEFT_TO_RIGHT, 30, 4, p, "health", 0, 10, false);
-		healthBar.createFilledBar(0xFF63460C, 0xFFE6AA2F);
+		healthBar.createFilledBar(0xfffe1b4b, 0xffff7a96);
 		add(healthBar);
 	}
 	

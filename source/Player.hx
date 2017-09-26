@@ -13,7 +13,7 @@ class  Player extends FlxSprite
 	var _down:Bool = false;
 	var _left:Bool = false;
 	var _right:Bool = false;
-	
+
 	public function new() 
 	{
 		super();
