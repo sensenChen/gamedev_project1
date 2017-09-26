@@ -41,7 +41,7 @@ class PlayState extends FlxState
 	private var _background:FlxTilemap;
 	private var _hud: HUD;
 	var _grpEnemies = new FlxTypedGroup<Enemy>();
-	
+	var _grpAttacks:FlxTypedGroup<Attack>;
 	override public function create():Void
 	{	
 		super.create();
@@ -126,9 +126,12 @@ class PlayState extends FlxState
 		heart3.color = FlxColor.BLACK;
 		heart3.updateHitbox();
 		add(heart3);
-		
+		// add attacks
+		_grpAttacks = new FlxTypedGroup<Attack>();
+		add(_grpAttacks);
+
 		// player
-		_player = new Player();
+		_player = new Player(_grpAttacks);
 		_player.scale.set(.30, .30);
 		_player.x = 420;
 		_player.y = 420;

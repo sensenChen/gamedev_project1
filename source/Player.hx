@@ -4,6 +4,7 @@ import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.math.FlxPoint;
 import flixel.FlxObject;
+import flixel.group.FlxGroup.FlxTypedGroup;
 
 class  Player extends FlxSprite
 {
@@ -13,8 +14,11 @@ class  Player extends FlxSprite
 	var _down:Bool = false;
 	var _left:Bool = false;
 	var _right:Bool = false;
-
-	public function new() 
+	var _butt:Bool = false;
+	var _kick:Bool = false;
+	var _kiss:Bool = false;
+	var attackArray:FlxTypedGroup<Attack>;
+	public function new(playerAttackArray:FlxTypedGroup<Attack>) 
 	{
 		super();
 		loadGraphic("assets/images/duck.png", true, 100, 114);
@@ -22,6 +26,7 @@ class  Player extends FlxSprite
 		setFacingFlip(FlxObject.RIGHT, false, false);
 		animation.add("walk", [0, 1, 0, 2], 5, true);
 		drag.x = drag.y = 2000;
+		attackArray = playerAttackArray;
 	}
 	
 	override public function update(elapsed:Float):Void
@@ -37,6 +42,9 @@ class  Player extends FlxSprite
 		_down = FlxG.keys.anyPressed([DOWN, S]);
 		_left = FlxG.keys.anyPressed([LEFT, A]);
 		_right = FlxG.keys.anyPressed([RIGHT, D]);
+		_butt = FlxG.keys.justPressed.ONE;
+		_kick = FlxG.keys.justPressed.TWO;
+		_kiss = FlxG.keys.justPressed.THREE;
 	}
 	
 	function movement():Void
@@ -59,9 +67,22 @@ class  Player extends FlxSprite
 			velocity.set(speed, 0);
 			velocity.rotate(new FlxPoint(0, 0), _rot);
 			animation.play("walk");
+		} 
+		else if (_butt || _kick || _kiss) {
+			if (_butt) {
+				attack(0);
+			} else if (_kick) {
+				attack(1);
+			} else if (_kiss) {
+				attack(2);
+			}
 		}
 		else {
 			animation.stop();
 		}
+	}
+	private function attack(_attackKind:Int):Void {
+		var newAttack = new Attack(x, y, 500, facing, _attackKind);
+		attackArray.add(newAttack);
 	}
 }
