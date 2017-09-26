@@ -33,7 +33,6 @@ class PlayState extends FlxState
 	var arr:Array<Array<Int> >;
 	private var _level:FlxTilemap;
 	private var _hud: HUD;
-
 	
 
 	override public function create():Void
@@ -43,30 +42,40 @@ class PlayState extends FlxState
 		var M = 10;
 		var N = 10;
 		var arr = MazeGeneration.generateMaze(M,N);
-		//load(M,N);
-
-
+		load(M,N);
+		
+		
 		// add map
 		_level = new FlxTilemap();
-		_level.loadMapFrom2DArray(arr, "assets/images/Tiles.png", 20, 20, AUTO);
+		_level.loadMapFrom2DArray(arr, "assets/images/Tiles_64x64x2.png", 64, 64, OFF, 1, 1, 1);
 		// _level.loadMapFromCSV("assets/data/test.csv", "assets/images/Tiles.png", 20, 20, AUTO);
-		_level.scale.set(2, 2);
+		_level.scale.set(40 / 64, 40 / 64);
 		add(_level);
 		// show heart
-		h1 = new FlxSprite(500, 100);
+		h1 = new FlxSprite(points[hearts[0]][0]*40, points[hearts[0]][1]*40);
 		h1.loadGraphic("assets/images/h1.png", false, 64, 64);
+		h1.scale.set(40 / 64, 40 / 64);
+		h1.updateHitbox();
 		add(h1);
-		h2 = new FlxSprite(570, 100);
+		h2 = new FlxSprite(points[hearts[1]][0]*40, points[hearts[1]][1]*40);
 		h2.loadGraphic("assets/images/h2.png", false, 64, 64);
+		h2.scale.set(40 / 64, 40 / 64);
+		h2.updateHitbox();
 		add(h2);
-		h3 = new FlxSprite(640, 100);
+		h3 = new FlxSprite(points[hearts[2]][0]*40, points[hearts[2]][1]*40);
 		h3.loadGraphic("assets/images/h3.png", false, 64, 64);
+		h3.scale.set(40 / 64, 40 / 64);
+		h3.updateHitbox();
 		add(h3);
-		h4 = new FlxSprite(710, 100);
+		h4 = new FlxSprite(points[hearts[3]][0]*40, points[hearts[3]][1]*40);
 		h4.loadGraphic("assets/images/h4.png", false, 64, 64);
+		h4.scale.set(40 / 64, 40 / 64);
+		h4.updateHitbox();
 		add(h4);
-		h5 = new FlxSprite(780, 100);
+		h5 = new FlxSprite(points[hearts[4]][0]*40, points[hearts[4]][1]*40);
 		h5.loadGraphic("assets/images/h5.png", false, 64, 64);
+		h5.scale.set(40 / 64, 40 / 64);
+		h5.updateHitbox();
 		add(h5);
 		
 		// player
@@ -91,17 +100,7 @@ class PlayState extends FlxState
 		_enemy.updateHitbox();
 		
 		add(_enemy);*/
-		
-		// test enemy
-		/*enemy = new FlxSprite();
-		enemy.makeGraphic(200, 200, FlxColor.WHITE);
-		enemy.immovable = true;
-		enemy.solid = true;
-		enemy.x = 100;
-		enemy.y = 300;
-		enemy.updateHitbox();
-		add(enemy);*/
-		
+
 		// health bar
 		_hud = new HUD(_player);
 		add(_hud);
