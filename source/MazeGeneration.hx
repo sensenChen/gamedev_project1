@@ -4,7 +4,7 @@ import flixel.math.FlxRandom;
 class MazeGeneration {
   static var M = 10;
   static var N = 10;
- 	static var grid:Array<Array<Int>> = [for (x in 0...M) [for (y in 0...N) 0]];
+  static var grid:Array<Array<Int>> = [for (x in 0...M) [for (y in 0...N) 0]];
   public static var display:Array<Array<Int> > = [for (x in 0...2*M+2) [for (y in 0...2*N+2) 1]];
   static var check:Array<Array<Array<Int> > > = [for (x in 0...M) [for (y in 0...M) [for (z in 0...4) 0 ]]];
 
@@ -163,7 +163,7 @@ class MazeGeneration {
 	// 3 = enemy
 	static function isvalid(display:Array<Array<Int> >,i:Int, j:Int):Bool {
   	if(i<=0 || j<=0 || i>=2*M-1 || j>=2*N-1) return false;
-  	if(display[i][j]==1 || display[i][j]==2 || display[i][j]==3) return false;
+  	if(display[i][j]==1 ) return false;
   	return true;
 	}
 

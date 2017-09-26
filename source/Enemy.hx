@@ -5,16 +5,20 @@ import flixel.FlxSprite;
 import flixel.FlxObject;
 import flixel.FlxG;
 import flixel.math.FlxVelocity;
+import flixel.tweens.FlxTween;
 class Enemy extends FlxSprite
  {
-     public var speed:Float = 200;
+     public var speed:Float = 4;
      public var etype(default, null):Int;
 	 private var _brain:FSM;
 	 private var _idleTmr:Float;
-	 private var _moveDir:Float;
+	 private var _moveDir:Int;
 	 public var seesPlayer:Bool = false;
 	 public var playerPos(default, null):FlxPoint;
-     public function new(X:Float=0, Y:Float=0)
+	 public var epath:Array<Int>;
+	 public var dir_index:Int;
+	 public var again:Bool = true;
+     public function new(X:Float=0, Y:Float=0, path:Array<Int>)
      {
          super(X, Y);
          loadGraphic("assets/images/duck.png", true, 100, 114);
@@ -27,9 +31,25 @@ class Enemy extends FlxSprite
          offset.x = 4;
          offset.y = 2;
 		 _brain = new FSM(idle);
-		_idleTmr = 0;
-		playerPos = FlxPoint.get();
+		 _idleTmr = 0;
+		 playerPos = FlxPoint.get();
+		 epath = path;
+		 //trace(path);
+		 dir_index = 0;
+		 _moveDir = 1;
      }
+	 
+	 public function oppodir(i:Int):Int {
+		if (i == 0) {
+			return 2;
+		} else if (i == 1) {
+			return 3;
+		} else if (i == 2) {
+			return 0;
+		} else {
+			return 1;
+		} 
+	}
 
      override public function draw():Void
      {
@@ -60,25 +80,62 @@ class Enemy extends FlxSprite
 		 {
 			 _brain.activeState = chase;
 		 }
-		 else if (_idleTmr <= 0)
-		 {
-			 if (FlxG.random.bool(1))
-			 {
-				 _moveDir = -1;
-				 velocity.x = velocity.y = 0;
-			 }
-			 else
-			 {
-				 _moveDir = FlxG.random.int(0, 8) * 45;
-
-				 velocity.set(speed * 0.5, 0);
-				 velocity.rotate(FlxPoint.weak(), _moveDir);
-
-			 }
-			 _idleTmr = FlxG.random.int(1, 4);            
-		 }
 		 else
-			 _idleTmr -= FlxG.elapsed;
+		 {
+			var m = epath[dir_index];
+			if (_moveDir ==-1) {
+				m = oppodir(m);
+			}
+			
+			
+			 if (m == 0) {
+				 facing = FlxObject.UP;
+				 velocity.x = 0;
+				 velocity.y = -speed;
+				 //velocity.set(0, -speed);
+			 } else if (m == 1) {
+				 facing = FlxObject.RIGHT;
+				 velocity.x = speed;
+				 velocity.y = 0;
+				 //velocity.set(speed, 0);
+			 } else if (m == 2) {
+				 facing = FlxObject.DOWN;
+				 velocity.x = 0;
+				 velocity.y = speed;
+				 //velocity.set(0, speed);
+			 } else if (m == 3) {
+				 facing = FlxObject.LEFT;
+				 velocity.x = -speed;
+				 velocity.y = 0;
+				 //velocity.set(-speed, 0);
+			 }
+			 // 0 up
+			 // 1 right
+			 // 2 down
+			 // 3 left
+			 
+			 if (dir_index == 99)
+			 {	
+				again = !again;
+				if (again)
+					_moveDir = -1;
+				
+				 /* epath.reverse();
+				 for (d in 0...10) {
+					 epath[d] = oppodir(epath[d]);
+				 } */
+			 } else if (dir_index == 0)  {
+				 again = !again;
+				 if (again)
+					_moveDir = 1;
+			 }
+			 x += velocity.x;
+			 y += velocity.y;
+			 //FlxTween.linearMotion(this, this.x, this.y, this.x + velocity.x, this.y + velocity.y, speed, false);
+			 if (!again)
+				dir_index+=_moveDir;
+			 
+		 }
 
 	 }
 
@@ -92,11 +149,16 @@ class Enemy extends FlxSprite
 		 {
 			 FlxVelocity.moveTowardsPoint(this, playerPos, Std.int(speed));
 		 }
-	 }
-
+	 } 
+	 
 	 override public function update(elapsed:Float):Void
 	 {
 		 _brain.update();
 		 super.update(elapsed);
 	 }
+	 
+	 override public function destroy():Void
+    {
+        super.destroy();
+    }
  }

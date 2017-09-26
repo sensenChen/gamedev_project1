@@ -8,7 +8,7 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 
 class  Player extends FlxSprite
 {
-	var speed:Float = 100;
+	var speed:Float = 300;
 	var _rot:Float = 0;
 	var _up:Bool = false;
 	var _down:Bool = false;
