@@ -47,19 +47,19 @@ class BossState extends FlxState
 		_loop.play();
 
 		// health for keep tracking
-		heart1 = new FlxSprite(22*40, 0);
+		heart1 = new FlxSprite(22*24, 0);
 		heart1.loadGraphic("assets/images/heart.png", false, 64, 64);
-		heart1.scale.set(40 / 64, 40 / 64);
+		heart1.scale.set(24 / 64, 24 / 64);
 		heart1.updateHitbox();
 		add(heart1);
-		heart2 = new FlxSprite(23*40, 0);
+		heart2 = new FlxSprite(23*24, 0);
 		heart2.loadGraphic("assets/images/heart.png", false, 64, 64);
-		heart2.scale.set(40 / 64, 40 / 64);
+		heart2.scale.set(24 / 64, 24 / 64);
 		heart2.updateHitbox();
 		add(heart2);
-		heart3 = new FlxSprite(24*40, 0);
+		heart3 = new FlxSprite(24*24, 0);
 		heart3.loadGraphic("assets/images/heart.png", false, 64, 64);
-		heart3.scale.set(40 / 64, 40 / 64);
+		heart3.scale.set(24 / 64, 24 / 64);
 		heart3.updateHitbox();
 		add(heart3);
 		
@@ -105,7 +105,7 @@ class BossState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
 		if (bossHealth == 0) {
-			FlxG.switchState(new TextState4());
+			FlxG.switchState(new TextState3());
 		}
 		for (i in _grpAttacks) {
 			for (j in _grpBosses) {
@@ -121,7 +121,7 @@ class BossState extends FlxState
 							heart2.color = FlxColor.BLACK;
 						} else if (numHearts == 0) {
 							heart1.color = FlxColor.BLACK;
-							FlxG.switchState(new TextState3());
+							FlxG.switchState(new TextState4());
 						}
 					}
 					i.destroy();

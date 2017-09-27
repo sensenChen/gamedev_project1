@@ -57,7 +57,7 @@ class PlayState2 extends FlxState
 		var N = 12;
 		/* arr = MazeGeneration.generateMaze(M,N);
 		epaths = load(M, N); */
-		var content:String = sys.io.File.getContent("assets/data/g4.json");
+		var content:String = sys.io.File.getContent("assets/data/g3.json");
 		data = haxe.Json.parse(content);
 		
 		// music

@@ -120,6 +120,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		Font.registerFont (__ASSET__flixel_fonts_nokiafc22_ttf);
 		Font.registerFont (__ASSET__flixel_fonts_monsterrat_ttf);
 		
@@ -129,6 +131,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -756,6 +760,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -769,6 +775,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		path.set ("assets/data/g1.json", "assets/data/g1.json");
 		type.set ("assets/data/g1.json", AssetType.TEXT);
+		path.set ("assets/data/g3.json", "assets/data/g3.json");
+		type.set ("assets/data/g3.json", AssetType.TEXT);
+		path.set ("assets/data/g4.json", "assets/data/g4.json");
+		type.set ("assets/data/g4.json", AssetType.TEXT);
 		path.set ("assets/data/test.csv", "assets/data/test.csv");
 		type.set ("assets/data/test.csv", AssetType.TEXT);
 		path.set ("assets/images/Attacks_64x64x3.png", "assets/images/Attacks_64x64x3.png");
@@ -910,6 +920,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
 		id = "assets/data/g1.json";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/data/g3.json";
+		path.set (id, id);
+		type.set (id, AssetType.TEXT);
+		id = "assets/data/g4.json";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
 		id = "assets/data/test.csv";
@@ -1133,6 +1149,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1993,6 +2011,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }
@@ -2002,6 +2022,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
 
 
 
