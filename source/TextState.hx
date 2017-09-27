@@ -63,7 +63,7 @@ class TextState extends FlxState
 
         } else if(counter>=3200) {
             text.y = 160;
-            text.text = "MOVEMENT: WASD OR ARROW KEYS\n\nATTACK (Different enemies need different attacks!): \n1 - Kissy lips: Deals Yellow Damage\n2 - Rockette Rocket Leg (RRL): Deals Pink Damage\n3 - Heres My Underwear : Deals Blue Damage\n\n Press SPACE to Continue";
+            text.text = "MOVEMENT: WASD OR ARROW KEYS\n\nATTACK: \n1 - Kissy lips: Deals Yellow Damage\n2 - Rockette Rocket Leg (RRL): Deals Pink Damage\n3 - Heres My Underwear : Deals Blue Damage\n\n Press SPACE to Continue";
             // text.FlxTextAlign = "center";
             if(FlxG.keys.anyPressed([SPACE])) {
                 switchState();

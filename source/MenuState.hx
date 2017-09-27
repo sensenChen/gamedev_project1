@@ -52,6 +52,6 @@ class MenuState extends FlxState
 	}
 
 	function openCredits():Void {
-		FlxG.switchState(new Credits());
+		FlxG.switchState(new TextState3());
 	}
 }

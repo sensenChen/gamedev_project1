@@ -106,7 +106,7 @@ class BossState extends FlxState
 		add(healthDisplay);
 		
 		// Instructions
-		text = new flixel.text.FlxText(50, 50, 500, "ATTACK (Different enemies need different attacks!): \n1 - Kissy lips: Deals Green Damage\n2 - Rockette Rocket Leg (RRL): Deals Purple Damage\n3 - Heres My Underwear : Deals Red Damage\n", 15);
+		text = new flixel.text.FlxText(50, 50, 500, "ATTACK: \n1 - Kissy lips: Deals Green Damage\n2 - Rockette Rocket Leg (RRL): Deals Purple Damage\n3 - Heres My Underwear : Deals Red Damage\n", 15);
 		add(text);
 	}
 	

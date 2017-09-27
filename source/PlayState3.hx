@@ -169,7 +169,6 @@ class PlayState3 extends FlxState
 		}
 		// health bar
 		_hud = new HUD(_player);
-		add(_hud);
 	}
 	
 	override public function update(elapsed:Float):Void
