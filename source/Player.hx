@@ -91,9 +91,9 @@ class  Player extends FlxSprite
 	private function attack(_attackKind:Int):Void {
 		var newAttack;
 		if (!_boss)
-			newAttack = new Attack(x, y, 500, facing, _attackKind, 20);
+			newAttack = new Attack(x+24/2-20/2, y+24/2-20/2, 500, facing, _attackKind, 20);
 		else 
-			newAttack = new Attack(x, y, 500, facing, _attackKind, 64*2);
+			newAttack = new Attack(x+24/2-128/2, y+24/2-128/2, 500, facing, _attackKind, 64*2);
 		attackArray.add(newAttack);
 	}
 }
