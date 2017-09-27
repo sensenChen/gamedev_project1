@@ -2,7 +2,7 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxState;
-import flixel.FlxTextAlign;
+// import flixel.FlxTextAlign;
 
 class TextState extends FlxState
 {   
@@ -13,6 +13,13 @@ class TextState extends FlxState
     override public function create():Void
     {
         super.create();
+        
+        var _loop = FlxG.sound.load("assets/music/Theme-1H.wav", 1, true);
+		_loop.play();
+
+
+        var _cringe1 = FlxG.sound.load("assets/recording/Intro_Clip_1.3.wav", 1, false);
+		_cringe1.play();
 
         text = new flixel.text.FlxText(50, 50, 500, "Seduction...Oh, you poor dear...Seduction is a dangerous thing. If not treated carefully, it can be most dreadful, most detrimental, perhaps - oh yes, perhaps even beyond repair.", 19);
         text.screenCenter();
@@ -24,19 +31,24 @@ class TextState extends FlxState
         super.update(elapsed);
         counter++;
 
-        if(counter==300) {
+        if(counter==850) {
             text.text = "Seduction truly is a cruel mistress. Or...maybe it is your mistress that is cruel...as..as well as seductive! Oh...W-wait that’s...that’s just a dominatrix...Moving on!";
-            text.FlxTextAlign = "center";
-        } else if(counter==600) {
+            // text.FlxTextAlign = "center";
+             var _cringe1 = FlxG.sound.load("assets/recording/Intro_Clip_2.3.wav", 1, false);
+		    _cringe1.play();
+
+        } else if(counter==1700) {
             text.text = "You. Your heart was broken. Your precious heart shattered and those 5 pieces lie abandoned. You were seduced and destroyed, but there is hope for you yet, poor soul. In this home of lost love, you may collect those 5 pieces - seduce those who hold your heart from you - and you will be able to love again.";
-            text.FlxTextAlign = "center";
-        } else if(counter==900) {
+            // text.FlxTextAlign = "center";
+            var _cringe1 = FlxG.sound.load("assets/recording/Intro_Clip_3.3.wav", 1, false);
+		    _cringe1.play();
+        } else if(counter==2950) {
             text.text = "But if you should fail…";
-            text.FlxTextAlign = "center";
-        } else if(counter==1000) {
+            // text.FlxTextAlign = "center";
+        } else if(counter==3200) {
             text.text = "Instuctions blah blah instructions...";
-            text.FlxTextAlign = "center";
-        } else if(counter==1200) {
+            // text.FlxTextAlign = "center";
+        } else if(counter==3500) {
             FlxG.switchState(new PlayState());
         }
 
