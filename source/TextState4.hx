@@ -2,7 +2,6 @@ package;
 
 import flixel.FlxG;
 import flixel.FlxState;
-// import flixel.FlxTextAlign;
 
 class TextState4 extends FlxState
 {   
@@ -23,7 +22,7 @@ class TextState4 extends FlxState
 
         text = new flixel.text.FlxText(50, 50, 500, "Well...sometimes when you take a chance...it doesn’t always work out in your favor.", 19);
         text.screenCenter();
-        text.y = 100;
+        // text.y = 100;
         add(text);
     }
 
@@ -43,7 +42,7 @@ class TextState4 extends FlxState
             // text.FlxTextAlign = "center";
             var _cringe1 = FlxG.sound.load("assets/recording/Fail_3.3.wav", 1, false);
 		    _cringe1.play();
-        } else if(counter==1200) {
+        } else if(counter>=1200) {
             text.text = "I’m sorry. \n\nPress SPACE to Continue";
             if(FlxG.keys.anyPressed([SPACE])) {
                 switchState();
