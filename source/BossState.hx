@@ -27,13 +27,12 @@ class BossState extends FlxState
 	var heart1:FlxSprite;
 	var heart2:FlxSprite;
 	var heart3:FlxSprite;
-	var heart4:FlxSprite;
 	var bossHealth:Int = 3;
 	var num1:Int = 0;
 	var num2:Int = 1;
 	var num3:Int = 2;
 	var numHearts:Int = 3;
-	
+	var healthDisplay:FlxText;
 	var count:Int = 0;
 	private var _hud: HUD;
 	var _grpAttacks:FlxTypedGroup<Attack>;
@@ -47,17 +46,17 @@ class BossState extends FlxState
 		_loop.play();
 
 		// health for keep tracking
-		heart1 = new FlxSprite(22*24, 0);
+		heart1 = new FlxSprite(1*24, 0);
 		heart1.loadGraphic("assets/images/heart.png", false, 64, 64);
 		heart1.scale.set(24 / 64, 24 / 64);
 		heart1.updateHitbox();
 		add(heart1);
-		heart2 = new FlxSprite(23*24, 0);
+		heart2 = new FlxSprite(2*24, 0);
 		heart2.loadGraphic("assets/images/heart.png", false, 64, 64);
 		heart2.scale.set(24 / 64, 24 / 64);
 		heart2.updateHitbox();
 		add(heart2);
-		heart3 = new FlxSprite(24*24, 0);
+		heart3 = new FlxSprite(3*24, 0);
 		heart3.loadGraphic("assets/images/heart.png", false, 64, 64);
 		heart3.scale.set(24 / 64, 24 / 64);
 		heart3.updateHitbox();
@@ -72,8 +71,8 @@ class BossState extends FlxState
 		// player
 		_player = new Player(_grpAttacks, true);
 		_player.scale.set(2, 2);
-		_player.x = 0;
-		_player.y = 0;
+		_player.x = 50;
+		_player.y = 220;
 		_player.updateHitbox();
 		_player.health = 3;
 		add(_player);
@@ -104,6 +103,8 @@ class BossState extends FlxState
 	
 	override public function update(elapsed:Float):Void
 	{
+		healthDisplay = new FlxText(15*24, 4, 100, "Boss health: " + bossHealth + "/" + 3, 20);
+		add(healthDisplay);
 		if (bossHealth == 0) {
 			FlxG.switchState(new TextState3());
 		}
