@@ -157,7 +157,7 @@ class PlayState extends FlxState
 
 		// player
 		_player = new Player(_grpAttacks, false);
-		_player.scale.set(tilesize*.6/64, tilesize*.6/64);
+		_player.scale.set(tilesize*.4/64, tilesize*.4/64);
 		_player.x = data.playerX * tilesize;
 		_player.y = data.playerY * tilesize;
 		_player.updateHitbox();

@@ -45,7 +45,7 @@ class TextState extends FlxState
                 counter = 1695;
             
         } else if(counter>=1700 && counter<3000) {
-            text.y = 150;
+            text.y = 160;
             text.text = "You. Your heart was broken. Your precious heart shattered and those 5 pieces lie abandoned. You were seduced and destroyed, but there is hope for you yet, poor soul. In this home of lost love, you may collect those 5 pieces - seduce those who hold your heart from you - and you will be able to love again.";
             // text.FlxTextAlign = "center";
             var _cringe1 = FlxG.sound.load("assets/recording/Intro_Clip_3.3.wav", 1, false);
@@ -57,9 +57,12 @@ class TextState extends FlxState
         } else if(counter>=3000 && counter<3200) {
             text.text = "But if you should fail...";
             // text.FlxTextAlign = "center";
+            if(FlxG.keys.anyPressed([SPACE])) {
+                counter = 3195;
+            }
 
         } else if(counter>=3200) {
-            text.y = 150;
+            text.y = 160;
             text.text = "MOVEMENT: WASD OR ARROW KEYS\n\nATTACK (Different enemies need different attacks!): \n1 - Kissy lips: Deals Yellow Damage\n2 - Rockette Rocket Leg (RRL): Deals Pink Damage\n3 - Heres My Underwear : Deals Blue Damage\n\n Press SPACE to Continue";
             // text.FlxTextAlign = "center";
             if(FlxG.keys.anyPressed([SPACE])) {
