@@ -40,7 +40,7 @@ class ApplicationMain {
 		telemetryConfig = new hxtelemetry.HxTelemetry.Config ();
 		telemetryConfig.allocations = true;
 		telemetryConfig.host = "localhost";
-		telemetryConfig.app_name = "GD1-tutorial";
+		telemetryConfig.app_name = "HeartFelt";
 		#end
 		
 		
@@ -141,7 +141,7 @@ class ApplicationMain {
 			(false ? flash.Lib.FULLSCREEN : 0) |
 			(0 == 4 ? flash.Lib.HW_AA_HIRES : 0) |
 			(0 == 2 ? flash.Lib.HW_AA : 0),
-			"GD1-tutorial",
+			"HeartFelt",
 			null
 			#if mobile, ScaledStage #end
 		);
@@ -325,7 +325,7 @@ class ApplicationMain {
 		wx.App.boot (function () {
 			
 			
-			frame = wx.Frame.create (null, null, "GD1-tutorial", null, { width: 600, height: 600 });
+			frame = wx.Frame.create (null, null, "HeartFelt", null, { width: 600, height: 600 });
 			
 			
 			#if openfl
@@ -515,11 +515,11 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "66",
+			build: "5",
 			company: "HaxeFlixel",
 			file: "GD1-tutorial",
 			fps: 60,
-			name: "GD1-tutorial",
+			name: "HeartFelt",
 			orientation: "landscape",
 			packageName: "com.example.myapp",
 			version: "0.0.1",
@@ -537,7 +537,7 @@ class ApplicationMain {
 					parameters: "{}",
 					resizable: true,
 					stencilBuffer: false,
-					title: "GD1-tutorial",
+					title: "HeartFelt",
 					vsync: true,
 					width: 600,
 					x: null,
