@@ -42,8 +42,6 @@ class HUD extends FlxSpriteGroup
 	
 	override public function update(elapsed:Float):Void {
 		super.update(elapsed);
-		healthDisplay.text = "Health: " + hp + "/" + maxHp;
-		levelDisplay.text = "Level:" + level;
 		healthBar.value = hp;
 		healthBar.setRange(0, maxHp);
 		healthBar.trackParent(0, -5);

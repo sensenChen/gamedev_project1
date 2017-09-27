@@ -33,7 +33,6 @@ class Attack extends FlxSprite
 		updateHitbox();
 		setFacingFlip(FlxObject.LEFT, false, false);
         setFacingFlip(FlxObject.RIGHT, true, false);
-		
     }
  
     override public function update(elapsed:Float):Void

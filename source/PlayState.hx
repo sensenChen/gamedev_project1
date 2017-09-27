@@ -44,7 +44,7 @@ class PlayState extends FlxState
 	var heart3:FlxSprite;
 	var heart4:FlxSprite;
 	var data:Config;
-	var tilesize = 24;
+	var tilesize = 40;
 	var points:Array<Array<Int> >;
 	var hearts:Array<Int>; 
 	var enemies:Array<Int>;
@@ -215,7 +215,7 @@ class PlayState extends FlxState
 			add(heart4);
 			_player.health++;
 			_hud.updateHUD(_player.health);
-			
+			FlxG.switchState(new PlayState2());
 		}
 		if (FlxG.overlap(_player, h1)) {
 			count++;
