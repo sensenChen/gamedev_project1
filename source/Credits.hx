@@ -16,12 +16,12 @@ class Credits extends FlxState
     {
         super.create();
         
-        var _loop = FlxG.sound.load("assets/music/Theme-1H.wav", 1, true);
+        var _loop = FlxG.sound.load("assets/music/Theme-5H.wav", 1, true);
 		_loop.play();
 
 
-        var _cringe1 = FlxG.sound.load("assets/recording/Intro_Clip_1.3.wav", 1, false);
-		_cringe1.play();
+        // var _cringe1 = FlxG.sound.load("assets/recording/Intro_Clip_1.3.wav", 1, false);
+		// _cringe1.play();
 
         text = new flixel.text.FlxText(50, 50, -1, "Art\nClaire Zhu\n\nMusic\nConnor Griffin\n\nWriting\nMaria Salmon\n\nCoding\nMengyi Li\nSensen Chen",16);
         text.screenCenter();

@@ -44,6 +44,9 @@ class TextState3 extends FlxState
 		    _cringe1.play();
         } else if(counter>=1700) {
             text.text = "Watch over your heart. \n\n Press SPACE to Continue";
+            if(FlxG.keys.anyPressed([SPACE])) {
+                switchState();
+            }
         }
     }
 
