@@ -105,9 +105,7 @@ class BossState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
 		if (bossHealth == 0) {
-			_boss1.destroy();
-			_boss2.destroy();
-			_boss3.destroy();
+			FlxG.switchState(new TextState4());
 		}
 		for (i in _grpAttacks) {
 			for (j in _grpBosses) {
@@ -123,6 +121,7 @@ class BossState extends FlxState
 							heart2.color = FlxColor.BLACK;
 						} else if (numHearts == 0) {
 							heart1.color = FlxColor.BLACK;
+							FlxG.switchState(new TextState3());
 						}
 					}
 					i.destroy();

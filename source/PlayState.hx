@@ -44,7 +44,7 @@ class PlayState extends FlxState
 	var heart3:FlxSprite;
 	var heart4:FlxSprite;
 	var data:Config;
-	var tilesize = 40;
+	var tilesize = 24;
 	var points:Array<Array<Int> >;
 	var hearts:Array<Int>; 
 	var enemies:Array<Int>;

@@ -42,16 +42,20 @@ class TextState extends FlxState
             // text.FlxTextAlign = "center";
             var _cringe1 = FlxG.sound.load("assets/recording/Intro_Clip_3.3.wav", 1, false);
 		    _cringe1.play();
-        } else if(counter==2950) {
-            text.text = "But if you should fail…";
+        } else if(counter==3000) {
+            text.text = "But if you should fail...";
             // text.FlxTextAlign = "center";
-        } else if(counter==3200) {
-            text.text = "Instuctions blah blah instructions...";
+        } else if(counter>=3200) {
+            text.text = "MOVEMENT: WASD OR ARROW KEYS\n\nATTACK (Different enemies need different attacks!): \n1 - Kissy lips: Deals Green Damage\n2 - Rockette Rocket Leg (RRL): Deals Purple Damage\n3 - Heres My Underwear : Deals Red Damage\n\n Press SPACE to Continue";
             // text.FlxTextAlign = "center";
-        } else if(counter==3500) {
-            FlxG.switchState(new PlayState());
+            if(FlxG.keys.anyPressed([SPACE])) {
+                switchState();
+            }
         }
-
-
     }
+
+    function switchState() {
+        FlxG.switchState(new PlayState());
+    }
+
 }
