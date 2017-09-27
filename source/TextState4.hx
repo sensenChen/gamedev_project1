@@ -23,6 +23,7 @@ class TextState4 extends FlxState
 
         text = new flixel.text.FlxText(50, 50, 500, "Well...sometimes when you take a chance...it doesn’t always work out in your favor.", 19);
         text.screenCenter();
+        text.y = 100;
         add(text);
     }
 
