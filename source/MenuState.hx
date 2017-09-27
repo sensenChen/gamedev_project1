@@ -37,8 +37,7 @@ class MenuState extends FlxState
 	}
 	
 	function clickPlay():Void
-	{
-		FlxG.switchState(new TextState3());
+		FlxG.switchState(new TextState());
 	}
 
 	function openCredits():Void {
