@@ -515,7 +515,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "5",
+			build: "30",
 			company: "HaxeFlixel",
 			file: "GD1-tutorial",
 			fps: 60,

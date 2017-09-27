@@ -55,7 +55,7 @@ class PlayState3 extends FlxState
 		var N = 12;
 		/* arr = MazeGeneration.generateMaze(M,N);
 		epaths = load(M, N); */
-		var content:String = sys.io.File.getContent("assets/data/g1.json");
+		var content:String = sys.io.File.getContent("assets/data/g3.json");
 		data = haxe.Json.parse(content);
 		
 		// music
@@ -120,17 +120,17 @@ class PlayState3 extends FlxState
 		add(h5);
 		
 		// health for keep tracking
-		heart1 = new FlxSprite(18*40, 0);
+		heart1 = new FlxSprite(22*40, 0);
 		heart1.loadGraphic("assets/images/heart.png", false);
 		heart1.scale.set(40 / 64, 40 / 64);
 		heart1.updateHitbox();
 		add(heart1);
-		heart2 = new FlxSprite(19*40, 0);
+		heart2 = new FlxSprite(23*40, 0);
 		heart2.loadGraphic("assets/images/heart.png", false, 64, 64);
 		heart2.scale.set(40 / 64, 40 / 64);
 		heart2.updateHitbox();
 		add(heart2);
-		heart3 = new FlxSprite(20*40, 0);
+		heart3 = new FlxSprite(24*40, 0);
 		heart3.loadGraphic("assets/images/heart.png", false, 64, 64);
 		heart3.scale.set(40 / 64, 40 / 64);
 		heart3.color = FlxColor.BLACK;
@@ -193,7 +193,7 @@ class PlayState3 extends FlxState
 		}
 		if (count == 5) {
 			count = 0;
-			heart4 = new FlxSprite(20*40, 0);
+			heart4 = new FlxSprite(24*40, 0);
 			heart4.loadGraphic("assets/images/heart.png", false, 64, 64);
 			heart4.scale.set(40 / 64, 40 / 64);
 			heart4.updateHitbox();

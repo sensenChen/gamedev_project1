@@ -21,7 +21,7 @@ class Boss extends FlxSprite
 		} else {
 			animation.add("boss3", [4, 5], 5, true);
 		}
-		immovable = true;
+		immovable = false;
      }
 	 
 

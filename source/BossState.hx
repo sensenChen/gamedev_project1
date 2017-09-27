@@ -47,17 +47,17 @@ class BossState extends FlxState
 		_loop.play();
 
 		// health for keep tracking
-		heart1 = new FlxSprite(18*40, 0);
+		heart1 = new FlxSprite(22*40, 0);
 		heart1.loadGraphic("assets/images/heart.png", false, 64, 64);
 		heart1.scale.set(40 / 64, 40 / 64);
 		heart1.updateHitbox();
 		add(heart1);
-		heart2 = new FlxSprite(19*40, 0);
+		heart2 = new FlxSprite(23*40, 0);
 		heart2.loadGraphic("assets/images/heart.png", false, 64, 64);
 		heart2.scale.set(40 / 64, 40 / 64);
 		heart2.updateHitbox();
 		add(heart2);
-		heart3 = new FlxSprite(20*40, 0);
+		heart3 = new FlxSprite(24*40, 0);
 		heart3.loadGraphic("assets/images/heart.png", false, 64, 64);
 		heart3.scale.set(40 / 64, 40 / 64);
 		heart3.updateHitbox();
@@ -81,24 +81,24 @@ class BossState extends FlxState
 		// Boss
 		_grpBosses = new FlxTypedGroup<Boss>();
 		_boss1 = new Boss(num1);
-		_boss1.scale.set(2, 2);
+		_boss1.scale.set(1.5, 1.5);
 		_boss1.updateHitbox();
-		_boss1.x = 420;
-		_boss1.y = 420;
+		_boss1.x = 300;
+		_boss1.y = 200;
 		_grpBosses.add(_boss1);
 		
 		_boss2 = new Boss(num2);
-		_boss2.scale.set(2, 2);
+		_boss2.scale.set(1.5, 1.5);
 		_boss2.updateHitbox();
-		_boss2.x = 420;
-		_boss2.y = 420;
+		_boss2.x = 300;
+		_boss2.y = 200;
 		_grpBosses.add(_boss2);
 		
 		_boss3 = new Boss(num3);
-		_boss3.scale.set(2, 2);
+		_boss3.scale.set(1.5, 1.5);
 		_boss3.updateHitbox();
-		_boss3.x = 420;
-		_boss3.y = 420;
+		_boss3.x = 300;
+		_boss3.y = 200;
 		_grpBosses.add(_boss3);
 	}
 	
@@ -127,7 +127,6 @@ class BossState extends FlxState
 					}
 					i.destroy();
 				}
-				
 			}
 		}
 		
@@ -135,26 +134,26 @@ class BossState extends FlxState
 			if (ran == 0) {
 				_boss1.destroy();
 				_boss1 = new Boss(num1);
-				_boss1.scale.set(2, 2);
+				_boss1.scale.set(1.5, 1.5);
 				_boss1.updateHitbox();
-				_boss1.x = 420;
-				_boss1.y = 420;
+				_boss1.x = 300;
+				_boss1.y = 200;
 				_grpBosses.add(_boss1);
 			} else if (ran == 1) {
 				_boss2.destroy();
 				_boss2 = new Boss(num2);
-				_boss2.scale.set(2, 2);
+				_boss2.scale.set(1.5, 1.5);
 				_boss2.updateHitbox();
-				_boss2.x = 420;
-				_boss2.y = 420;
+				_boss2.x = 300;
+				_boss2.y = 200;
 				_grpBosses.add(_boss2);
 			} else if (ran == 2) {
 				_boss3.destroy();
 				_boss3 = new Boss(num3);
-				_boss3.scale.set(2, 2);
+				_boss3.scale.set(1.5, 1.5);
 				_boss3.updateHitbox();
-				_boss3.x = 420;
-				_boss3.y = 420;
+				_boss3.x = 300;
+				_boss3.y = 200;
 				_grpBosses.add(_boss3);
 			}
 			ran = FlxG.random.int(0, 2);

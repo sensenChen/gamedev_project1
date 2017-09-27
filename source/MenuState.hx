@@ -25,6 +25,6 @@ class MenuState extends FlxState
 	function clickPlay():Void
 	{
 
-		FlxG.switchState(new PlayState());
+		FlxG.switchState(new BossState());
 	}
 }

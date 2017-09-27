@@ -133,19 +133,19 @@ class PlayState extends FlxState
 		add(h5);
 		
 		// health for keep tracking
-		heart1 = new FlxSprite(18*tilesize, 0);
+		heart1 = new FlxSprite(22*tilesize, 0);
 		heart1.loadGraphic("assets/images/heart.png", false);
 		heart1.scale.set(tilesize / 64, tilesize / 64);
 		heart1.color = FlxColor.BLACK;
 		heart1.updateHitbox();
 		add(heart1);
-		heart2 = new FlxSprite(19*tilesize, 0);
+		heart2 = new FlxSprite(23*tilesize, 0);
 		heart2.loadGraphic("assets/images/heart.png", false, 64, 64);
 		heart2.scale.set(tilesize / 64, tilesize / 64);
 		heart2.color = FlxColor.BLACK;
 		heart2.updateHitbox();
 		add(heart2);
-		heart3 = new FlxSprite(20*tilesize, 0);
+		heart3 = new FlxSprite(24*tilesize, 0);
 		heart3.loadGraphic("assets/images/heart.png", false, 64, 64);
 		heart3.scale.set(tilesize / 64, tilesize / 64);
 		heart3.color = FlxColor.BLACK;
@@ -208,7 +208,7 @@ class PlayState extends FlxState
 		}
 		if (count == 5) {
 			count = 0;
-			heart4 = new FlxSprite(18*tilesize, 0);
+			heart4 = new FlxSprite(22*tilesize, 0);
 			heart4.loadGraphic("assets/images/heart.png", false, 64, 64);
 			heart4.scale.set(tilesize / 64, tilesize / 64);
 			heart4.updateHitbox();
