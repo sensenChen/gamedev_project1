@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
@@ -14,10 +15,18 @@ class MenuState extends FlxState
 	override public function create():Void
 	{
 		super.create();
-
 		var text = new flixel.text.FlxText(125, 100, -1, "HeartFelt", 64);
+		text.x -= 50;
+		text.y += 100;
         // text.screenCenter();
-
+		var titleArt = new FlxSprite(100, 100);
+		titleArt.loadGraphic("assets/images/Title Art.png", false);
+		titleArt.scale.set(.45, .45);
+		titleArt.screenCenter();
+		titleArt.y -= 100;
+		titleArt.x += 200;
+		add(titleArt);
+		
 		var _loop = FlxG.sound.load("assets/music/Theme-4H.wav", 1, true);
 		_loop.play();
 
@@ -25,8 +34,8 @@ class MenuState extends FlxState
 		_creditButton = new FlxButton(0, 0, "Credits", openCredits);
 		_playButton.screenCenter();
 		_creditButton.screenCenter();
-		_creditButton.y = 330;
-
+		_creditButton.y = 380;
+		_playButton.y += 50;
 
 		add(_playButton);
 		add(_creditButton);

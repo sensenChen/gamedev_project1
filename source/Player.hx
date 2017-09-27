@@ -25,8 +25,9 @@ class  Player extends FlxSprite
 		loadGraphic("assets/images/Our Dude_64x64.png", true, 64, 64);
 		setFacingFlip(FlxObject.LEFT, false, false);
 		setFacingFlip(FlxObject.RIGHT, false, false);
-		animation.add("left", [0, 1], 5, true);
 		animation.add("right", [2, 3], 5, true);
+		animation.add("left", [0, 1], 5, true);
+		animation.play("right");
 		drag.x = drag.y = 2000;
 		attackArray = playerAttackArray;
 		_boss = boss;
