@@ -4,20 +4,32 @@ import flixel.FlxObject;
 import flixel.math.FlxVelocity;
 import flixel.math.FlxAngle;
 import flixel.math.FlxPoint;
- 
+import flixel.system.FlxSound;
 class Attack extends FlxSprite
 {
  
     private var speed:Float;
     private var direction:Int;
 	private var _rot:Float = 0;
-    public function new(X:Float, Y:Float,Speed:Float,Direction:Int,Kind:Int)
+	private var _kiss:FlxSound;
+	public var _kind:Int;
+    public function new(X:Float, Y:Float,Speed:Float,Direction:Int,Kind:Int, Scale:Int)
     {
-        super(X,Y);
+        super(X, Y);
+		_kind = Kind;
         speed = Speed;
         direction = Direction;
-		loadGraphic("assets/images/Attacks_64x64x3.png", false, 64, 64);
-		scale.set(40 / 64, 40 / 64);
+		if (Kind == 0) {
+			loadGraphic("assets/images/butt.png", false, 64, 64);
+		} else if (Kind == 1) {
+			loadGraphic("assets/images/kick.png", false, 64, 64); 
+		} else if (Kind == 2) {
+			loadGraphic("assets/images/kiss.png", false, 64, 64);
+		}
+		_kiss = FlxG.sound.load("assets/sounds/Kiss1.wav", 1, false);
+		_kiss.play();
+		scale.set(Scale / 64, Scale / 64);
+		
 		updateHitbox();
 		setFacingFlip(FlxObject.LEFT, false, false);
         setFacingFlip(FlxObject.RIGHT, true, false);
