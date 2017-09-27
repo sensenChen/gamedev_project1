@@ -13,14 +13,15 @@ class Boss extends FlxSprite
      {
 		 _kind = kind;
         super();
+		loadGraphic("assets/images/Final Boss.png", true, 90, 126);
 		if (kind == 0) {
-			loadGraphic("assets/images/Enemy1.png", true);
+			animation.add("boss1", [0, 1], 5, true);
 		} else if (kind == 1) {
-			loadGraphic("assets/images/Enemy2.png", true);
+			animation.add("boss2", [2, 3], 5, true);
 		} else {
-			loadGraphic("assets/images/Enemy3.png", true);
+			animation.add("boss3", [4, 5], 5, true);
 		}
-        animation.add("walk", [0, 1, 0, 1], 5, true);
+		immovable = true;
      }
 	 
 
@@ -29,7 +30,13 @@ class Boss extends FlxSprite
 	 override public function update(elapsed:Float):Void
 	 {
 		 var i = FlxG.random.int(0, 2); 
-		 animation.play("walk");
+		 if (_kind == 0) {
+			animation.play("boss1");
+		} else if (_kind == 1) {
+			animation.play("boss2");
+		} else {
+			animation.play("boss3");
+		}
 		 super.update(elapsed);
 	 }
 	 

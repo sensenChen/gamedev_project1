@@ -23,14 +23,18 @@ class BossState extends FlxState
 	var _boss1:Boss;
 	var _boss2:Boss;
 	var _boss3:Boss;
-	var ran:Int;
+	var ran:Int = 0;
 	var heart1:FlxSprite;
 	var heart2:FlxSprite;
 	var heart3:FlxSprite;
 	var heart4:FlxSprite;
 	var bossHealth:Int = 3;
+	var num1:Int = 0;
+	var num2:Int = 1;
+	var num3:Int = 2;
+	var numHearts:Int = 3;
 	
-	var count:Int;
+	var count:Int = 0;
 	private var _hud: HUD;
 	var _grpAttacks:FlxTypedGroup<Attack>;
 	var _grpBosses:FlxTypedGroup<Boss>;
@@ -76,23 +80,22 @@ class BossState extends FlxState
 		
 		// Boss
 		_grpBosses = new FlxTypedGroup<Boss>();
-		add(_grpBosses);
-		_boss1 = new Boss(0);
-		_boss1.scale.set(5, 5);
+		_boss1 = new Boss(num1);
+		_boss1.scale.set(2, 2);
 		_boss1.updateHitbox();
 		_boss1.x = 420;
 		_boss1.y = 420;
 		_grpBosses.add(_boss1);
 		
-		_boss2 = new Boss(1);
-		_boss2.scale.set(5, 5);
+		_boss2 = new Boss(num2);
+		_boss2.scale.set(2, 2);
 		_boss2.updateHitbox();
 		_boss2.x = 420;
 		_boss2.y = 420;
 		_grpBosses.add(_boss2);
 		
-		_boss3 = new Boss(2);
-		_boss3.scale.set(5, 5);
+		_boss3 = new Boss(num3);
+		_boss3.scale.set(2, 2);
 		_boss3.updateHitbox();
 		_boss3.x = 420;
 		_boss3.y = 420;
@@ -101,10 +104,6 @@ class BossState extends FlxState
 	
 	override public function update(elapsed:Float):Void
 	{
-		/* if (FlxG.overlap(_player, _boss1)) {
-			_player.health--;
-			_hud.updateHUD(_player.health);
-		} */
 		if (bossHealth == 0) {
 			_boss1.destroy();
 			_boss2.destroy();
@@ -112,19 +111,63 @@ class BossState extends FlxState
 		}
 		for (i in _grpAttacks) {
 			for (j in _grpBosses) {
-				if (i._kind == j._kind && FlxG.overlap(i, j)) {
-					bossHealth--;
+				if (FlxG.overlap(i, j)) {
+					if (i._kind == j._kind) {
+						trace(i._kind, j._kind);
+						bossHealth--;
+					} else {
+						numHearts--;
+						if (numHearts == 2) {
+							heart3.color = FlxColor.BLACK;
+						} else if (numHearts == 1) {
+							heart2.color = FlxColor.BLACK;
+						} else if (numHearts == 0) {
+							heart1.color = FlxColor.BLACK;
+						}
+					}
+					i.destroy();
 				}
+				
 			}
 		}
-
-		ran = FlxG.random.int(0, 2);
-		if (ran == 0) {
+		
+		if (count % 30 == 0 && count != 0) {
+			if (ran == 0) {
+				_boss1.destroy();
+				_boss1 = new Boss(num1);
+				_boss1.scale.set(2, 2);
+				_boss1.updateHitbox();
+				_boss1.x = 420;
+				_boss1.y = 420;
+				_grpBosses.add(_boss1);
+			} else if (ran == 1) {
+				_boss2.destroy();
+				_boss2 = new Boss(num2);
+				_boss2.scale.set(2, 2);
+				_boss2.updateHitbox();
+				_boss2.x = 420;
+				_boss2.y = 420;
+				_grpBosses.add(_boss2);
+			} else if (ran == 2) {
+				_boss3.destroy();
+				_boss3 = new Boss(num3);
+				_boss3.scale.set(2, 2);
+				_boss3.updateHitbox();
+				_boss3.x = 420;
+				_boss3.y = 420;
+				_grpBosses.add(_boss3);
+			}
+			ran = FlxG.random.int(0, 2);
+			trace(ran, count);
+			if (ran == 0) {
+				add(_boss1);
+			} else if (ran == 1) {
+				add(_boss2);
+			} else if (ran == 2) {
+				add(_boss3);
+			}
+		}  else if (count == 0) {
 			add(_boss1);
-		} else if (ran == 1) {
-			add(_boss2);
-		} else if (ran == 2) {
-			add(_boss3);
 		}
 		count++;
 		super.update(elapsed);

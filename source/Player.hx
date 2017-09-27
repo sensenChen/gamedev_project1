@@ -23,9 +23,8 @@ class  Player extends FlxSprite
 	{
 		super();
 		loadGraphic("assets/images/Our Dude_64x64.png", true, 64, 64);
-		setFacingFlip(FlxObject.LEFT, true, false);
-		setFacingFlip(FlxObject.RIGHT, false, false);
-		animation.add("walk", [0, 1, 0, 2], 5, true);
+		animation.add("left", [0, 1], 5, true);
+		animation.add("right", [2, 3], 5, true);
 		drag.x = drag.y = 2000;
 		attackArray = playerAttackArray;
 		_boss = boss;
@@ -55,20 +54,19 @@ class  Player extends FlxSprite
 		{
 			if (_left) {
 				_rot = 180;
-				facing = FlxObject.LEFT;
+				animation.play("left");
 			} else if (_right) {
 				_rot = 0;
-				facing = FlxObject.RIGHT;
+				animation.play("right");
 			} else if (_down) {
 				_rot = 90;
-				facing = FlxObject.DOWN;
+				animation.play("right");
 			} else {
 				_rot = 270;
-				facing = FlxObject.UP;
+				animation.play("left");
 			}
 			velocity.set(speed, 0);
 			velocity.rotate(new FlxPoint(0, 0), _rot);
-			animation.play("walk");
 		} 
 		else if (_butt || _kick || _kiss) {
 			if (_butt) {

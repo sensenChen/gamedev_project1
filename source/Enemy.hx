@@ -21,11 +21,11 @@ class Enemy extends FlxSprite
      public function new(X:Float=0, Y:Float=0, path:Array<Int>, kind:Int)
      {
          super(X, Y);if (kind == 0) {
-			 loadGraphic("assets/images/Enemy1.png", true);
+			 loadGraphic("assets/images/Enemy1_64x64.png", true);
 		 } else if (kind == 1) {
-			 loadGraphic("assets/images/Enemy2.png", true);
+			 loadGraphic("assets/images/Enemy2_64x64.png", true);
 		 } else {
-			 loadGraphic("assets/images/Enemy3.png", true);
+			 loadGraphic("assets/images/Enemy3_64x64.png", true);
 		 }
          setFacingFlip(FlxObject.LEFT, false, false);
          setFacingFlip(FlxObject.RIGHT, true, false);
