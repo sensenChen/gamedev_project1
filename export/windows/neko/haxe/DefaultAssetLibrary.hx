@@ -110,6 +110,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
 		Font.registerFont (__ASSET__flixel_fonts_nokiafc22_ttf);
 		Font.registerFont (__ASSET__flixel_fonts_monsterrat_ttf);
 		
@@ -119,6 +126,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -726,6 +740,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -805,8 +826,42 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/music/Theme-4H.wav", AssetType.SOUND);
 		path.set ("assets/music/Theme-5H.wav", "assets/music/Theme-5H.wav");
 		type.set ("assets/music/Theme-5H.wav", AssetType.SOUND);
+		path.set ("assets/recording/Before Boss 1.1.wav", "assets/recording/Before Boss 1.1.wav");
+		type.set ("assets/recording/Before Boss 1.1.wav", AssetType.SOUND);
+		path.set ("assets/recording/Fail 1.3.wav", "assets/recording/Fail 1.3.wav");
+		type.set ("assets/recording/Fail 1.3.wav", AssetType.SOUND);
+		path.set ("assets/recording/Fail 2.3.wav", "assets/recording/Fail 2.3.wav");
+		type.set ("assets/recording/Fail 2.3.wav", AssetType.SOUND);
+		path.set ("assets/recording/Fail 3.3.wav", "assets/recording/Fail 3.3.wav");
+		type.set ("assets/recording/Fail 3.3.wav", AssetType.SOUND);
+		path.set ("assets/recording/Intro_Clip_1.3.wav", "assets/recording/Intro_Clip_1.3.wav");
+		type.set ("assets/recording/Intro_Clip_1.3.wav", AssetType.SOUND);
+		path.set ("assets/recording/Intro_Clip_2.3.wav", "assets/recording/Intro_Clip_2.3.wav");
+		type.set ("assets/recording/Intro_Clip_2.3.wav", AssetType.SOUND);
+		path.set ("assets/recording/Intro_Clip_3.3.wav", "assets/recording/Intro_Clip_3.3.wav");
+		type.set ("assets/recording/Intro_Clip_3.3.wav", AssetType.SOUND);
+		path.set ("assets/recording/Win 1.3.wav", "assets/recording/Win 1.3.wav");
+		type.set ("assets/recording/Win 1.3.wav", AssetType.SOUND);
+		path.set ("assets/recording/Win 2.3.wav", "assets/recording/Win 2.3.wav");
+		type.set ("assets/recording/Win 2.3.wav", AssetType.SOUND);
+		path.set ("assets/recording/Win 3.3.wav", "assets/recording/Win 3.3.wav");
+		type.set ("assets/recording/Win 3.3.wav", AssetType.SOUND);
 		path.set ("assets/script/Game Script.gdoc", "assets/script/Game Script.gdoc");
 		type.set ("assets/script/Game Script.gdoc", AssetType.TEXT);
+		path.set ("assets/sounds/Butt1.wav", "assets/sounds/Butt1.wav");
+		type.set ("assets/sounds/Butt1.wav", AssetType.SOUND);
+		path.set ("assets/sounds/Butt2.wav", "assets/sounds/Butt2.wav");
+		type.set ("assets/sounds/Butt2.wav", AssetType.SOUND);
+		path.set ("assets/sounds/Butt3.wav", "assets/sounds/Butt3.wav");
+		type.set ("assets/sounds/Butt3.wav", AssetType.SOUND);
+		path.set ("assets/sounds/EnemyDead1.wav", "assets/sounds/EnemyDead1.wav");
+		type.set ("assets/sounds/EnemyDead1.wav", AssetType.SOUND);
+		path.set ("assets/sounds/EnemyDead2.wav", "assets/sounds/EnemyDead2.wav");
+		type.set ("assets/sounds/EnemyDead2.wav", AssetType.SOUND);
+		path.set ("assets/sounds/EnemyDead3.wav", "assets/sounds/EnemyDead3.wav");
+		type.set ("assets/sounds/EnemyDead3.wav", AssetType.SOUND);
+		path.set ("assets/sounds/HeartCollect.wav", "assets/sounds/HeartCollect.wav");
+		type.set ("assets/sounds/HeartCollect.wav", AssetType.SOUND);
 		path.set ("assets/sounds/Kick1.wav", "assets/sounds/Kick1.wav");
 		type.set ("assets/sounds/Kick1.wav", AssetType.SOUND);
 		path.set ("assets/sounds/Kick2.wav", "assets/sounds/Kick2.wav");
@@ -819,26 +874,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/sounds/Kiss3.wav", AssetType.SOUND);
 		path.set ("assets/sounds/sounds-go-here.txt", "assets/sounds/sounds-go-here.txt");
 		type.set ("assets/sounds/sounds-go-here.txt", AssetType.TEXT);
-		path.set ("assets/voice recordings/Before Boss 1.1.wav", "assets/voice recordings/Before Boss 1.1.wav");
-		type.set ("assets/voice recordings/Before Boss 1.1.wav", AssetType.SOUND);
-		path.set ("assets/voice recordings/Fail 1.3.wav", "assets/voice recordings/Fail 1.3.wav");
-		type.set ("assets/voice recordings/Fail 1.3.wav", AssetType.SOUND);
-		path.set ("assets/voice recordings/Fail 2.3.wav", "assets/voice recordings/Fail 2.3.wav");
-		type.set ("assets/voice recordings/Fail 2.3.wav", AssetType.SOUND);
-		path.set ("assets/voice recordings/Fail 3.3.wav", "assets/voice recordings/Fail 3.3.wav");
-		type.set ("assets/voice recordings/Fail 3.3.wav", AssetType.SOUND);
-		path.set ("assets/voice recordings/Intro Clip 1.3.wav", "assets/voice recordings/Intro Clip 1.3.wav");
-		type.set ("assets/voice recordings/Intro Clip 1.3.wav", AssetType.SOUND);
-		path.set ("assets/voice recordings/Intro Clip 2.3.wav", "assets/voice recordings/Intro Clip 2.3.wav");
-		type.set ("assets/voice recordings/Intro Clip 2.3.wav", AssetType.SOUND);
-		path.set ("assets/voice recordings/Intro Clip 3.3.wav", "assets/voice recordings/Intro Clip 3.3.wav");
-		type.set ("assets/voice recordings/Intro Clip 3.3.wav", AssetType.SOUND);
-		path.set ("assets/voice recordings/Win 1.3.wav", "assets/voice recordings/Win 1.3.wav");
-		type.set ("assets/voice recordings/Win 1.3.wav", AssetType.SOUND);
-		path.set ("assets/voice recordings/Win 2.3.wav", "assets/voice recordings/Win 2.3.wav");
-		type.set ("assets/voice recordings/Win 2.3.wav", AssetType.SOUND);
-		path.set ("assets/voice recordings/Win 3.3.wav", "assets/voice recordings/Win 3.3.wav");
-		type.set ("assets/voice recordings/Win 3.3.wav", AssetType.SOUND);
 		className.set ("flixel/sounds/beep.ogg", __ASSET__flixel_sounds_beep_ogg);
 		type.set ("flixel/sounds/beep.ogg", AssetType.SOUND);
 		className.set ("flixel/sounds/flixel.ogg", __ASSET__flixel_sounds_flixel_ogg);
@@ -961,9 +996,60 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/music/Theme-5H.wav";
 		path.set (id, id);
 		type.set (id, AssetType.SOUND);
+		id = "assets/recording/Before Boss 1.1.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/recording/Fail 1.3.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/recording/Fail 2.3.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/recording/Fail 3.3.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/recording/Intro_Clip_1.3.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/recording/Intro_Clip_2.3.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/recording/Intro_Clip_3.3.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/recording/Win 1.3.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/recording/Win 2.3.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/recording/Win 3.3.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
 		id = "assets/script/Game Script.gdoc";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
+		id = "assets/sounds/Butt1.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/sounds/Butt2.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/sounds/Butt3.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/sounds/EnemyDead1.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/sounds/EnemyDead2.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/sounds/EnemyDead3.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/sounds/HeartCollect.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
 		id = "assets/sounds/Kick1.wav";
 		path.set (id, id);
 		type.set (id, AssetType.SOUND);
@@ -982,36 +1068,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/sounds/sounds-go-here.txt";
 		path.set (id, id);
 		type.set (id, AssetType.TEXT);
-		id = "assets/voice recordings/Before Boss 1.1.wav";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
-		id = "assets/voice recordings/Fail 1.3.wav";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
-		id = "assets/voice recordings/Fail 2.3.wav";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
-		id = "assets/voice recordings/Fail 3.3.wav";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
-		id = "assets/voice recordings/Intro Clip 1.3.wav";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
-		id = "assets/voice recordings/Intro Clip 2.3.wav";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
-		id = "assets/voice recordings/Intro Clip 3.3.wav";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
-		id = "assets/voice recordings/Win 1.3.wav";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
-		id = "assets/voice recordings/Win 2.3.wav";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
-		id = "assets/voice recordings/Win 3.3.wav";
-		path.set (id, id);
-		type.set (id, AssetType.SOUND);
 		id = "flixel/sounds/beep.ogg";
 		path.set (id, id);
 		
@@ -1053,6 +1109,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1893,6 +1956,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
+
+
+
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }
@@ -1902,6 +1972,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
+
+
+
+
+
 
 
 

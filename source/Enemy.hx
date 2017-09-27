@@ -8,7 +8,7 @@ import flixel.math.FlxVelocity;
 import flixel.tweens.FlxTween;
 class Enemy extends FlxSprite
  {
-     public var speed:Float = 4;
+     public var speed:Float = 2.4;
      public var etype(default, null):Int;
 	 private var _brain:FSM;
 	 private var _idleTmr:Float;
@@ -18,7 +18,7 @@ class Enemy extends FlxSprite
 	 public var epath:Array<Int>;
 	 public var dir_index:Int;
 	 public var again:Bool = true;
-     public function new(X:Float=0, Y:Float=0, path:Array<Int>, kind:Int)
+     public function new(X:Float=0, Y:Float=0, path:Array<Int>, kind:Int, tilesize:Int)
      {
          super(X, Y);if (kind == 0) {
 			 loadGraphic("assets/images/Enemy1_64x64.png", true);
@@ -42,6 +42,7 @@ class Enemy extends FlxSprite
 		 // trace(path);
 		 dir_index = 0;
 		 _moveDir = 1;
+		 speed = tilesize/10;
      }
 	 
 	 public function oppodir(i:Int):Int {

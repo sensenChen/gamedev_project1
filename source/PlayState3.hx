@@ -157,7 +157,7 @@ class PlayState3 extends FlxState
 					newpath.push(data.paths[i][e]);
 				}
 			}
-			_enemy = new Enemy(data.enemyY[i]*40, data.enemyX[i]*40, newpath, 2);
+			_enemy = new Enemy(data.enemyY[i]*40, data.enemyX[i]*40, newpath, 2, 40);
 			_enemy.scale.set(40/64, 40/64);
 			_enemy.updateHitbox();
 			add(_enemy);

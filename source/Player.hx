@@ -23,6 +23,8 @@ class  Player extends FlxSprite
 	{
 		super();
 		loadGraphic("assets/images/Our Dude_64x64.png", true, 64, 64);
+		setFacingFlip(FlxObject.LEFT, false, false);
+		setFacingFlip(FlxObject.RIGHT, false, false);
 		animation.add("left", [0, 1], 5, true);
 		animation.add("right", [2, 3], 5, true);
 		drag.x = drag.y = 2000;
@@ -55,15 +57,19 @@ class  Player extends FlxSprite
 			if (_left) {
 				_rot = 180;
 				animation.play("left");
+				facing = FlxObject.LEFT;
 			} else if (_right) {
 				_rot = 0;
 				animation.play("right");
+				facing = FlxObject.RIGHT;
 			} else if (_down) {
 				_rot = 90;
 				animation.play("right");
+				facing = FlxObject.DOWN;
 			} else {
 				_rot = 270;
 				animation.play("left");
+				facing = FlxObject.UP;
 			}
 			velocity.set(speed, 0);
 			velocity.rotate(new FlxPoint(0, 0), _rot);
