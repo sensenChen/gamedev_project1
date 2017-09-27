@@ -10,7 +10,6 @@ import flixel.util.FlxStringUtil;
 import flixel.util.FlxColor;
 import flixel.tile.FlxTilemap;
 import flixel.graphics.FlxGraphic;
-import haxe.Json;
 import openfl.Assets;
 import flixel.tile.FlxBaseTilemap;
 import flixel.util.FlxCollision;
@@ -18,19 +17,7 @@ import flixel.util.FlxArrayUtil;
 import MazeGeneration.*;
 import flixel.system.FlxSound;
 import flixel.group.FlxGroup.FlxTypedGroup;
-import sys.io.File;
-
-typedef Config = {
-	var playerX:Int;
-	var playerY:Int;
-	var heartX:Array<Int>;
-	var heartY:Array<Int>;
-	var enemyX:Array<Int>;
-	var enemyY:Array<Int>;
-	var dsp:Array<Array<Int> >;
-	var paths:Array<Array<Int> >;
-}
-class PlayState extends FlxState
+class PlayState3 extends FlxState
 {
 	var _player:Player;
 	var _enemy:Enemy;
@@ -43,7 +30,7 @@ class PlayState extends FlxState
 	var heart2:FlxSprite;
 	var heart3:FlxSprite;
 	var heart4:FlxSprite;
-	var data:Config;
+	
 	var points:Array<Array<Int> >;
 	var hearts:Array<Int>; 
 	var enemies:Array<Int>;
@@ -61,69 +48,67 @@ class PlayState extends FlxState
 	{	
 		super.create();
 		count = 0;
-		var M = 12;
-		var N = 12;
-		/* arr = MazeGeneration.generateMaze(M,N);
-		epaths = load(M, N); */
-		var content:String = sys.io.File.getContent("assets/data/g1.json");
-		data = haxe.Json.parse(content);
-		
+		var M = 10;
+		var N = 10;
+		arr = MazeGeneration.generateMaze(M,N);
+		epaths = load(M, N);
+
 		// music
-		var _loop = FlxG.sound.load("assets/music/Theme-1H.wav", 1, true);
+		var _loop = FlxG.sound.load("assets/music/Theme-3H.wav", 1, true);
 		_loop.play();
 		
 		// add map
 		// walls
 		_wall = new FlxTilemap();
-		_wall.loadMapFrom2DArray(data.dsp, "assets/images/Tiles_64x64x2.png", 64, 64, OFF, 1, 1, 1);
+		_wall.loadMapFrom2DArray(arr, "assets/images/Tiles_64x64x2.png", 64, 64, OFF, 1, 1, 1);
 		_wall.scale.set(40 / 64, 40 / 64);
 		add(_wall);
 		
 		for (i in 0...2*M+1) {
 			for (j in 0...2*N+1) {
-				if (data.dsp[i][j] == 0) {
-					data.dsp[i][j] = 1;
-				} else if (data.dsp[i][j] == 1){
-					data.dsp[i][j] = 0;
+				if (arr[i][j] == 0) {
+					arr[i][j] = 1;
+				} else if (arr[i][j] == 1){
+					arr[i][j] = 0;
 				}
 			}
 		}
 		// background
 		_background = new FlxTilemap();
-		_background.loadMapFrom2DArray(data.dsp, "assets/images/Tiles_64x64x2.png", 64, 64, OFF, 0, 1, 1);
+		_background.loadMapFrom2DArray(arr, "assets/images/Tiles_64x64x2.png", 64, 64, OFF, 0, 1, 1);
 		_background.scale.set(40 / 64, 40 / 64);
 		add(_background);
 		for (i in 0...2*M+1) {
 			for (j in 0...2*N+1) {
-				if (data.dsp[i][j] == 0) {
-					data.dsp[i][j] = 1;
-				} else if (data.dsp[i][j] == 1){
-					data.dsp[i][j] = 0;
+				if (arr[i][j] == 0) {
+					arr[i][j] = 1;
+				} else if (arr[i][j] == 1){
+					arr[i][j] = 0;
 				}
 			}
 		} 
 		// show heart pieces
-		h1 = new FlxSprite(data.heartY[0]*40, data.heartX[0]*40);
+		h1 = new FlxSprite(points[hearts[0]][1]*40+40, points[hearts[0]][0]*40+40);
 		h1.loadGraphic("assets/images/h1.png", false, 64, 64);
 		h1.scale.set(40 / 64, 40 / 64);
 		h1.updateHitbox();
 		add(h1);
-		h2 = new FlxSprite(data.heartY[1]*40, data.heartX[1]*40);
+		h2 = new FlxSprite(points[hearts[1]][1]*40+40, points[hearts[1]][0]*40+40);
 		h2.loadGraphic("assets/images/h2.png", false, 64, 64);
 		h2.scale.set(40 / 64, 40 / 64);
 		h2.updateHitbox();
 		add(h2);
-		h3 = new FlxSprite(data.heartY[2]*40, data.heartX[2]*40);
+		h3 = new FlxSprite(points[hearts[2]][1]*40+40, points[hearts[2]][0]*40+40);
 		h3.loadGraphic("assets/images/h3.png", false, 64, 64);
 		h3.scale.set(40 / 64, 40 / 64);
 		h3.updateHitbox();
 		add(h3);
-		h4 = new FlxSprite(data.heartY[3]*40, data.heartX[3]*40);
+		h4 = new FlxSprite(points[hearts[3]][1]*40+40, points[hearts[3]][0]*40+40);
 		h4.loadGraphic("assets/images/h4.png", false, 64, 64);
 		h4.scale.set(40 / 64, 40 / 64);
 		h4.updateHitbox();
 		add(h4);
-		h5 = new FlxSprite(data.heartY[4]*40, data.heartX[4]*40);
+		h5 = new FlxSprite(points[hearts[4]][1]*40+40, points[hearts[4]][0]*40+40);
 		h5.loadGraphic("assets/images/h5.png", false, 64, 64);
 		h5.scale.set(40 / 64, 40 / 64);
 		h5.updateHitbox();
@@ -131,15 +116,13 @@ class PlayState extends FlxState
 		
 		// health for keep tracking
 		heart1 = new FlxSprite(18*40, 0);
-		heart1.loadGraphic("assets/images/heart.png", false);
+		heart1.loadGraphic("assets/images/heart.png", false, 64, 64);
 		heart1.scale.set(40 / 64, 40 / 64);
-		heart1.color = FlxColor.BLACK;
 		heart1.updateHitbox();
 		add(heart1);
 		heart2 = new FlxSprite(19*40, 0);
 		heart2.loadGraphic("assets/images/heart.png", false, 64, 64);
 		heart2.scale.set(40 / 64, 40 / 64);
-		heart2.color = FlxColor.BLACK;
 		heart2.updateHitbox();
 		add(heart2);
 		heart3 = new FlxSprite(20*40, 0);
@@ -154,11 +137,11 @@ class PlayState extends FlxState
 
 		// player
 		_player = new Player(_grpAttacks, false);
-		_player.scale.set(32/64, 32/64);
-		_player.x = data.playerX * 40;
-		_player.y = data.playerY * 40;
+		_player.scale.set(.30, .30);
+		_player.x = 420;
+		_player.y = 420;
 		_player.updateHitbox();
-		_player.health = 0;
+		_player.health = 2;
 		add(_player);
 		
 		// enemy
@@ -166,10 +149,10 @@ class PlayState extends FlxState
 			var newpath = new Array<Int>();
 			for (e in 0...10) {
 				for (j in 0...10) {
-					newpath.push(data.paths[i][e]);
+					newpath.push(epaths[i][e]);
 				}
 			}
-			_enemy = new Enemy(data.enemyY[i]*40, data.enemyX[i]*40, newpath, 0);
+			_enemy = new Enemy(points[enemies[i]][1]*40+40, points[enemies[i]][0]*40+40, newpath, 2);
 			_enemy.scale.set(40/64, 40/64);
 			_enemy.updateHitbox();
 			add(_enemy);
@@ -205,14 +188,14 @@ class PlayState extends FlxState
 		}
 		if (count == 5) {
 			count = 0;
-			heart4 = new FlxSprite(18*40, 0);
+			heart4 = new FlxSprite(20*40, 0);
 			heart4.loadGraphic("assets/images/heart.png", false, 64, 64);
 			heart4.scale.set(40 / 64, 40 / 64);
 			heart4.updateHitbox();
 			add(heart4);
 			_player.health++;
 			_hud.updateHUD(_player.health);
-			
+			FlxG.switchState(new BossState());
 		}
 		if (FlxG.overlap(_player, h1)) {
 			count++;
@@ -237,7 +220,7 @@ class PlayState extends FlxState
 		super.update(elapsed);
 	}
 
-	/* public function load(M:Int, N:Int): Array<Array<Int>>{
+	public function load(M:Int, N:Int): Array<Array<Int>>{
 		points = [for (x in 0...((2 * M - 1) * (2 * N - 1))) [for (y in 0...2) 0]];
 		var paths:Array<Array<Int> > = new Array<Array<Int> >();
 		var pathIt = 0;
@@ -280,5 +263,5 @@ class PlayState extends FlxState
 		}
 		// trace(arr);
 		return paths;
-	} */
+	}
 }

@@ -18,6 +18,8 @@ class AssetData {
 			
 			path.set ("assets/data/data-goes-here.txt", "assets/data/data-goes-here.txt");
 			type.set ("assets/data/data-goes-here.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+			path.set ("assets/data/g1.json", "assets/data/g1.json");
+			type.set ("assets/data/g1.json", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/data/test.csv", "assets/data/test.csv");
 			type.set ("assets/data/test.csv", Reflect.field (AssetType, "text".toUpperCase ()));
 			path.set ("assets/images/Attacks_64x64x3.png", "assets/images/Attacks_64x64x3.png");
@@ -26,6 +28,18 @@ class AssetData {
 			type.set ("assets/images/butt.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/duck.png", "assets/images/duck.png");
 			type.set ("assets/images/duck.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Enemy1.png", "assets/images/Enemy1.png");
+			type.set ("assets/images/Enemy1.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Enemy1_64x64.png", "assets/images/Enemy1_64x64.png");
+			type.set ("assets/images/Enemy1_64x64.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Enemy2.png", "assets/images/Enemy2.png");
+			type.set ("assets/images/Enemy2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Enemy2_64x64.png", "assets/images/Enemy2_64x64.png");
+			type.set ("assets/images/Enemy2_64x64.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Enemy3.png", "assets/images/Enemy3.png");
+			type.set ("assets/images/Enemy3.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Enemy3_64x64.png", "assets/images/Enemy3_64x64.png");
+			type.set ("assets/images/Enemy3_64x64.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/h1.png", "assets/images/h1.png");
 			type.set ("assets/images/h1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/h2.png", "assets/images/h2.png");
@@ -48,6 +62,8 @@ class AssetData {
 			type.set ("assets/images/kick.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/kiss.png", "assets/images/kiss.png");
 			type.set ("assets/images/kiss.png", Reflect.field (AssetType, "image".toUpperCase ()));
+			path.set ("assets/images/Our Dude_64x64.png", "assets/images/Our Dude_64x64.png");
+			type.set ("assets/images/Our Dude_64x64.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Tiles.png", "assets/images/Tiles.png");
 			type.set ("assets/images/Tiles.png", Reflect.field (AssetType, "image".toUpperCase ()));
 			path.set ("assets/images/Tiles_64x64x2.png", "assets/images/Tiles_64x64x2.png");

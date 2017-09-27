@@ -18,13 +18,18 @@ class Enemy extends FlxSprite
 	 public var epath:Array<Int>;
 	 public var dir_index:Int;
 	 public var again:Bool = true;
-     public function new(X:Float=0, Y:Float=0, path:Array<Int>)
+     public function new(X:Float=0, Y:Float=0, path:Array<Int>, kind:Int)
      {
-         super(X, Y);
-         loadGraphic("assets/images/duck.png", true, 100, 114);
+         super(X, Y);if (kind == 0) {
+			 loadGraphic("assets/images/Enemy1.png", true);
+		 } else if (kind == 1) {
+			 loadGraphic("assets/images/Enemy2.png", true);
+		 } else {
+			 loadGraphic("assets/images/Enemy3.png", true);
+		 }
          setFacingFlip(FlxObject.LEFT, false, false);
          setFacingFlip(FlxObject.RIGHT, true, false);
-         animation.add("walk", [0, 1, 0, 2], 5, true);
+         animation.add("walk", [0, 1], 5, true);
          drag.x = drag.y = 10;
          width = 8;
          height = 14;
@@ -34,7 +39,7 @@ class Enemy extends FlxSprite
 		 _idleTmr = 0;
 		 playerPos = FlxPoint.get();
 		 epath = path;
-		 //trace(path);
+		 // trace(path);
 		 dir_index = 0;
 		 _moveDir = 1;
      }

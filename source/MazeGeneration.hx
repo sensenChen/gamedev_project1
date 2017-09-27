@@ -228,5 +228,6 @@ class MazeGeneration {
 
 
   static function main() {
+	  
   }
 }

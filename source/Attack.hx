@@ -12,9 +12,11 @@ class Attack extends FlxSprite
     private var direction:Int;
 	private var _rot:Float = 0;
 	private var _kiss:FlxSound;
-    public function new(X:Float, Y:Float,Speed:Float,Direction:Int,Kind:Int)
+	public var _kind:Int;
+    public function new(X:Float, Y:Float,Speed:Float,Direction:Int,Kind:Int, Scale:Int)
     {
-        super(X,Y);
+        super(X, Y);
+		_kind = Kind;
         speed = Speed;
         direction = Direction;
 		if (Kind == 0) {
@@ -26,7 +28,7 @@ class Attack extends FlxSprite
 		}
 		_kiss = FlxG.sound.load("assets/sounds/Kiss1.wav", 1, false);
 		_kiss.play();
-		scale.set(30 / 64, 30 / 64);
+		scale.set(Scale / 64, Scale / 64);
 		
 		updateHitbox();
 		setFacingFlip(FlxObject.LEFT, false, false);

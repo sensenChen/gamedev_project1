@@ -8,7 +8,7 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 
 class  Player extends FlxSprite
 {
-	var speed:Float = 300;
+	var speed:Float = 200;
 	var _rot:Float = 0;
 	var _up:Bool = false;
 	var _down:Bool = false;
@@ -17,16 +17,18 @@ class  Player extends FlxSprite
 	var _butt:Bool = false;
 	var _kick:Bool = false;
 	var _kiss:Bool = false;
+	var _boss:Bool;
 	var attackArray:FlxTypedGroup<Attack>;
-	public function new(playerAttackArray:FlxTypedGroup<Attack>) 
+	public function new(playerAttackArray:FlxTypedGroup<Attack>, boss:Bool) 
 	{
 		super();
-		loadGraphic("assets/images/duck.png", true, 100, 114);
+		loadGraphic("assets/images/Our Dude_64x64.png", true, 64, 64);
 		setFacingFlip(FlxObject.LEFT, true, false);
 		setFacingFlip(FlxObject.RIGHT, false, false);
 		animation.add("walk", [0, 1, 0, 2], 5, true);
 		drag.x = drag.y = 2000;
 		attackArray = playerAttackArray;
+		_boss = boss;
 	}
 	
 	override public function update(elapsed:Float):Void
@@ -82,7 +84,11 @@ class  Player extends FlxSprite
 		}
 	}
 	private function attack(_attackKind:Int):Void {
-		var newAttack = new Attack(x, y, 500, facing, _attackKind);
+		var newAttack;
+		if (!_boss)
+			newAttack = new Attack(x, y, 500, facing, _attackKind, 30);
+		else 
+			newAttack = new Attack(x, y, 500, facing, _attackKind, 64*3);
 		attackArray.add(newAttack);
 	}
 }

@@ -57,8 +57,8 @@ class ApplicationMain {
 				
 				#if mobile
 				
-				forceWidth = 840;
-				forceHeight = 840;
+				forceWidth = 1000;
+				forceHeight = 1000;
 				
 				container = new flash.display.Sprite ();
 				barA = new flash.display.Sprite ();
@@ -127,7 +127,7 @@ class ApplicationMain {
 				}
 				
 			},
-			840, 840, 
+			1000, 1000, 
 			60, 
 			0,
 			(true ? flash.Lib.HARDWARE : 0) |
@@ -248,13 +248,13 @@ class ScaledStage extends flash.display.Stage {
 	
 	private override function get_stageHeight ():Int {
 		
-		return 840;
+		return 1000;
 	
 	}
 	
 	private override function get_stageWidth ():Int {
 		
-		return 840;
+		return 1000;
 	
 	}
 	
@@ -325,11 +325,11 @@ class ApplicationMain {
 		wx.App.boot (function () {
 			
 			
-			frame = wx.Frame.create (null, null, "GD1-tutorial", null, { width: 840, height: 840 });
+			frame = wx.Frame.create (null, null, "GD1-tutorial", null, { width: 1000, height: 1000 });
 			
 			
 			#if openfl
-			var stage = wx.NMEStage.create (frame, null, null, { width: 840, height: 840 });
+			var stage = wx.NMEStage.create (frame, null, null, { width: 1000, height: 1000 });
 			#end
 			
 			var hasMain = false;
@@ -515,7 +515,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "184",
+			build: "273",
 			company: "HaxeFlixel",
 			file: "GD1-tutorial",
 			fps: 60,
@@ -533,13 +533,13 @@ class ApplicationMain {
 					display: 0,
 					fullscreen: false,
 					hardware: true,
-					height: 840,
+					height: 1000,
 					parameters: "{}",
 					resizable: true,
 					stencilBuffer: false,
 					title: "GD1-tutorial",
 					vsync: true,
-					width: 840,
+					width: 1000,
 					x: null,
 					y: null
 				},
@@ -549,7 +549,7 @@ class ApplicationMain {
 		
 		#if (js && html5)
 		#if (munit || utest)
-		openfl.Lib.embed (null, 840, 840, "null");
+		openfl.Lib.embed (null, 1000, 1000, "null");
 		#end
 		#else
 		create ();
