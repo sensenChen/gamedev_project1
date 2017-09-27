@@ -12,6 +12,8 @@ class Attack extends FlxSprite
     private var direction:Int;
 	private var _rot:Float = 0;
 	private var _kiss:FlxSound;
+	private var _butt:FlxSound;
+	private var _kick:FlxSound;
 	public var _kind:Int;
     public function new(X:Float, Y:Float,Speed:Float,Direction:Int,Kind:Int, Scale:Int)
     {
@@ -21,12 +23,14 @@ class Attack extends FlxSprite
         direction = Direction;
 		if (Kind == 0) {
 			loadGraphic("assets/images/butt.png", false, 64, 64);
+			_butt = FlxG.sound.load("assets/sounds/Butt1.wav", 1, false);
 		} else if (Kind == 1) {
 			loadGraphic("assets/images/kick.png", false, 64, 64); 
+			_kick = FlxG.sound.load("assets/sounds/Kick1.wav", 1, false);
 		} else if (Kind == 2) {
 			loadGraphic("assets/images/kiss.png", false, 64, 64);
+			_kiss = FlxG.sound.load("assets/sounds/Kiss1.wav", 1, false);
 		}
-		_kiss = FlxG.sound.load("assets/sounds/Kiss1.wav", 1, false);
 		_kiss.play();
 		scale.set(Scale / 64, Scale / 64);
 		
