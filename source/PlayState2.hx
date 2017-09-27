@@ -46,7 +46,9 @@ class PlayState2 extends FlxState
 	private var _hud: HUD;
 	var _grpEnemies = new FlxTypedGroup<Enemy>();
 	var _grpAttacks:FlxTypedGroup<Attack>;
-	
+	var tilesize = 24;
+
+
 	override public function create():Void
 	{	
 		super.create();
@@ -66,7 +68,7 @@ class PlayState2 extends FlxState
 		// walls
 		_wall = new FlxTilemap();
 		_wall.loadMapFrom2DArray(data.dsp, "assets/images/Tiles_64x64x2.png", 64, 64, OFF, 1, 1, 1);
-		_wall.scale.set(40 / 64, 40 / 64);
+		_wall.scale.set(tilesize / 64, tilesize / 64);
 		add(_wall);
 		
 		for (i in 0...2*M+1) {
@@ -81,7 +83,7 @@ class PlayState2 extends FlxState
 		// background
 		_background = new FlxTilemap();
 		_background.loadMapFrom2DArray(data.dsp, "assets/images/Tiles_64x64x2.png", 64, 64, OFF, 0, 1, 1);
-		_background.scale.set(40 / 64, 40 / 64);
+		_background.scale.set(tilesize / 64, tilesize / 64);
 		add(_background);
 		for (i in 0...2*M+1) {
 			for (j in 0...2*N+1) {
@@ -93,47 +95,47 @@ class PlayState2 extends FlxState
 			}
 		} 
 		// show heart pieces
-		h1 = new FlxSprite(data.heartY[0]*40, data.heartX[0]*40);
+		h1 = new FlxSprite(data.heartY[0]*tilesize, data.heartX[0]*tilesize);
 		h1.loadGraphic("assets/images/h1.png", false, 64, 64);
-		h1.scale.set(40 / 64, 40 / 64);
+		h1.scale.set(tilesize / 64, tilesize / 64);
 		h1.updateHitbox();
 		add(h1);
-		h2 = new FlxSprite(data.heartY[1]*40, data.heartX[1]*40);
+		h2 = new FlxSprite(data.heartY[1]*tilesize, data.heartX[1]*tilesize);
 		h2.loadGraphic("assets/images/h2.png", false, 64, 64);
-		h2.scale.set(40 / 64, 40 / 64);
+		h2.scale.set(tilesize / 64, tilesize / 64);
 		h2.updateHitbox();
 		add(h2);
-		h3 = new FlxSprite(data.heartY[2]*40, data.heartX[2]*40);
+		h3 = new FlxSprite(data.heartY[2]*tilesize, data.heartX[2]*tilesize);
 		h3.loadGraphic("assets/images/h3.png", false, 64, 64);
-		h3.scale.set(40 / 64, 40 / 64);
+		h3.scale.set(tilesize / 64, tilesize / 64);
 		h3.updateHitbox();
 		add(h3);
-		h4 = new FlxSprite(data.heartY[3]*40, data.heartX[3]*40);
+		h4 = new FlxSprite(data.heartY[3]*tilesize, data.heartX[3]*tilesize);
 		h4.loadGraphic("assets/images/h4.png", false, 64, 64);
-		h4.scale.set(40 / 64, 40 / 64);
+		h4.scale.set(tilesize / 64, tilesize / 64);
 		h4.updateHitbox();
 		add(h4);
-		h5 = new FlxSprite(data.heartY[4]*40, data.heartX[4]*40);
+		h5 = new FlxSprite(data.heartY[4]*tilesize, data.heartX[4]*tilesize);
 		h5.loadGraphic("assets/images/h5.png", false, 64, 64);
-		h5.scale.set(40 / 64, 40 / 64);
+		h5.scale.set(tilesize / 64, tilesize / 64);
 		h5.updateHitbox();
 		add(h5);
 		
 		// health for keep tracking
-		heart1 = new FlxSprite(18*40, 0);
+		heart1 = new FlxSprite(18*tilesize, 0);
 		heart1.loadGraphic("assets/images/heart.png", false);
-		heart1.scale.set(40 / 64, 40 / 64);
+		heart1.scale.set(tilesize / 64, tilesize / 64);
 		heart1.updateHitbox();
 		add(heart1);
-		heart2 = new FlxSprite(19*40, 0);
+		heart2 = new FlxSprite(19*tilesize, 0);
 		heart2.loadGraphic("assets/images/heart.png", false, 64, 64);
-		heart2.scale.set(40 / 64, 40 / 64);
+		heart2.scale.set(tilesize / 64, tilesize / 64);
 		heart2.color = FlxColor.BLACK;
 		heart2.updateHitbox();
 		add(heart2);
-		heart3 = new FlxSprite(20*40, 0);
+		heart3 = new FlxSprite(20*tilesize, 0);
 		heart3.loadGraphic("assets/images/heart.png", false, 64, 64);
-		heart3.scale.set(40 / 64, 40 / 64);
+		heart3.scale.set(tilesize / 64, tilesize / 64);
 		heart3.color = FlxColor.BLACK;
 		heart3.updateHitbox();
 		add(heart3);
@@ -143,9 +145,9 @@ class PlayState2 extends FlxState
 
 		// player
 		_player = new Player(_grpAttacks, false);
-		_player.scale.set(32/64, 32/64);
-		_player.x = data.playerX * 40;
-		_player.y = data.playerY * 40;
+		_player.scale.set(tilesize*.6/64, tilesize*.6/64);
+		_player.x = data.playerX * tilesize;
+		_player.y = data.playerY * tilesize;
 		_player.updateHitbox();
 		_player.health = 1;
 		add(_player);
@@ -158,8 +160,8 @@ class PlayState2 extends FlxState
 					newpath.push(data.paths[i][e]);
 				}
 			}
-			_enemy = new Enemy(data.enemyY[i]*40, data.enemyX[i]*40, newpath, 1, 40);
-			_enemy.scale.set(40/64, 40/64);
+			_enemy = new Enemy(data.enemyY[i]*tilesize, data.enemyX[i]*tilesize, newpath, 1, tilesize);
+			_enemy.scale.set(tilesize/64, tilesize/64);
 			_enemy.updateHitbox();
 			add(_enemy);
 			_grpEnemies.add(_enemy);
@@ -194,9 +196,9 @@ class PlayState2 extends FlxState
 		}
 		if (count == 5) {
 			count = 0;
-			heart4 = new FlxSprite(19*40, 0);
+			heart4 = new FlxSprite(19*tilesize, 0);
 			heart4.loadGraphic("assets/images/heart.png", false, 64, 64);
-			heart4.scale.set(40 / 64, 40 / 64);
+			heart4.scale.set(tilesize / 64, tilesize / 64);
 			heart4.updateHitbox();
 			add(heart4);
 			_player.health++;

@@ -17,6 +17,9 @@ class MenuState extends FlxState
 		var text = new flixel.text.FlxText(125, 100, -1, "HeartFelt", 64);
         // text.screenCenter();
 
+		var _loop = FlxG.sound.load("assets/music/Theme-4H.wav", 1, true);
+		_loop.play();
+
 		_playButton = new FlxButton(10, 10, "Start game", clickPlay);
 		_playButton.screenCenter();
 		add(_playButton);
@@ -31,6 +34,6 @@ class MenuState extends FlxState
 	function clickPlay():Void
 	{
 
-		FlxG.switchState(new PlayState());
+		FlxG.switchState(new TextState());
 	}
 }
