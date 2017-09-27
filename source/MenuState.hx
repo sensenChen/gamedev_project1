@@ -4,6 +4,7 @@ import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.ui.FlxButton;
 import flixel.FlxG;
+import flixel.text.FlxText;
 
 class MenuState extends FlxState
 {
@@ -12,9 +13,14 @@ class MenuState extends FlxState
 	override public function create():Void
 	{
 		super.create();
+
+		var text = new flixel.text.FlxText(125, 100, -1, "HeartFelt", 64);
+        // text.screenCenter();
+
 		_playButton = new FlxButton(10, 10, "Start game", clickPlay);
 		_playButton.screenCenter();
 		add(_playButton);
+		add(text);
 	}
 
 	override public function update(elapsed:Float):Void

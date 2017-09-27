@@ -110,6 +110,14 @@ class AssetData {
 			type.set ("assets/sounds/Butt2.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 			path.set ("assets/sounds/Butt3.wav", "assets/sounds/Butt3.wav");
 			type.set ("assets/sounds/Butt3.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+			path.set ("assets/sounds/EnemyDead1.wav", "assets/sounds/EnemyDead1.wav");
+			type.set ("assets/sounds/EnemyDead1.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+			path.set ("assets/sounds/EnemyDead2.wav", "assets/sounds/EnemyDead2.wav");
+			type.set ("assets/sounds/EnemyDead2.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+			path.set ("assets/sounds/EnemyDead3.wav", "assets/sounds/EnemyDead3.wav");
+			type.set ("assets/sounds/EnemyDead3.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+			path.set ("assets/sounds/HeartCollect.wav", "assets/sounds/HeartCollect.wav");
+			type.set ("assets/sounds/HeartCollect.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 			path.set ("assets/sounds/Kick1.wav", "assets/sounds/Kick1.wav");
 			type.set ("assets/sounds/Kick1.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 			path.set ("assets/sounds/Kick2.wav", "assets/sounds/Kick2.wav");

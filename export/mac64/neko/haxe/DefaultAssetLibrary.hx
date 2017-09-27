@@ -111,6 +111,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
 		Font.registerFont (__ASSET__flixel_fonts_nokiafc22_ttf);
 		Font.registerFont (__ASSET__flixel_fonts_monsterrat_ttf);
 		
@@ -120,6 +124,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -729,6 +737,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
+		
+		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -832,6 +844,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/sounds/Butt2.wav", AssetType.SOUND);
 		path.set ("assets/sounds/Butt3.wav", "assets/sounds/Butt3.wav");
 		type.set ("assets/sounds/Butt3.wav", AssetType.SOUND);
+		path.set ("assets/sounds/EnemyDead1.wav", "assets/sounds/EnemyDead1.wav");
+		type.set ("assets/sounds/EnemyDead1.wav", AssetType.SOUND);
+		path.set ("assets/sounds/EnemyDead2.wav", "assets/sounds/EnemyDead2.wav");
+		type.set ("assets/sounds/EnemyDead2.wav", AssetType.SOUND);
+		path.set ("assets/sounds/EnemyDead3.wav", "assets/sounds/EnemyDead3.wav");
+		type.set ("assets/sounds/EnemyDead3.wav", AssetType.SOUND);
+		path.set ("assets/sounds/HeartCollect.wav", "assets/sounds/HeartCollect.wav");
+		type.set ("assets/sounds/HeartCollect.wav", AssetType.SOUND);
 		path.set ("assets/sounds/Kick1.wav", "assets/sounds/Kick1.wav");
 		type.set ("assets/sounds/Kick1.wav", AssetType.SOUND);
 		path.set ("assets/sounds/Kick2.wav", "assets/sounds/Kick2.wav");
@@ -1002,6 +1022,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 		id = "assets/sounds/Butt3.wav";
 		path.set (id, id);
 		type.set (id, AssetType.SOUND);
+		id = "assets/sounds/EnemyDead1.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/sounds/EnemyDead2.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/sounds/EnemyDead3.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
+		id = "assets/sounds/HeartCollect.wav";
+		path.set (id, id);
+		type.set (id, AssetType.SOUND);
 		id = "assets/sounds/Kick1.wav";
 		path.set (id, id);
 		type.set (id, AssetType.SOUND);
@@ -1061,6 +1093,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		#if (windows || mac || linux)
 		
 		var useManifest = false;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
+		useManifest = true;
 		useManifest = true;
 		useManifest = true;
 		useManifest = true;
@@ -1903,6 +1939,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
+
+
+
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_beep_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_sounds_flixel_ogg extends null { }
 @:keep @:bind #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends null { }
@@ -1912,6 +1952,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 #elseif html5
+
+
+
+
 
 
 
