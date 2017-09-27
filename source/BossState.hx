@@ -34,6 +34,7 @@ class BossState extends FlxState
 	var numHearts:Int = 3;
 	var healthDisplay:FlxText;
 	var count:Int = 0;
+	var text:flixel.text.FlxText;
 	private var _hud: HUD;
 	var _grpAttacks:FlxTypedGroup<Attack>;
 	var _grpBosses:FlxTypedGroup<Boss>;
@@ -99,15 +100,22 @@ class BossState extends FlxState
 		_boss3.x = 300;
 		_boss3.y = 200;
 		_grpBosses.add(_boss3);
+		
+		// boss health display
+		healthDisplay = new FlxText(15*24, 4, 500, "Boss health: " + bossHealth + "/" + 3, 20);
+		add(healthDisplay);
+		
+		// Instructions
+		text = new flixel.text.FlxText(50, 50, 500, "ATTACK (Different enemies need different attacks!): \n1 - Kissy lips: Deals Green Damage\n2 - Rockette Rocket Leg (RRL): Deals Purple Damage\n3 - Heres My Underwear : Deals Red Damage\n");
+		add(text);
 	}
 	
 	override public function update(elapsed:Float):Void
 	{
-		healthDisplay = new FlxText(15*24, 4, 100, "Boss health: " + bossHealth + "/" + 3, 20);
-		add(healthDisplay);
 		if (bossHealth == 0) {
 			FlxG.switchState(new TextState3());
 		}
+		healthDisplay.text = "Boss health: " + bossHealth + "/" + 3;
 		for (i in _grpAttacks) {
 			for (j in _grpBosses) {
 				if (FlxG.overlap(i, j)) {

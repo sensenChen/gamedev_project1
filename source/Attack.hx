@@ -24,14 +24,16 @@ class Attack extends FlxSprite
 		if (Kind == 0) {
 			loadGraphic("assets/images/butt.png", false, 64, 64);
 			_butt = FlxG.sound.load("assets/sounds/Butt1.wav", 1, false);
+			_butt.play();
 		} else if (Kind == 1) {
 			loadGraphic("assets/images/kick.png", false, 64, 64); 
 			_kick = FlxG.sound.load("assets/sounds/Kick1.wav", 1, false);
+			_kick.play();
 		} else if (Kind == 2) {
 			loadGraphic("assets/images/kiss.png", false, 64, 64);
 			_kiss = FlxG.sound.load("assets/sounds/Kiss1.wav", 1, false);
+			_kiss.play();
 		}
-		_kiss.play();
 		scale.set(Scale / 64, Scale / 64);
 		
 		updateHitbox();
