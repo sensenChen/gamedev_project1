@@ -21,10 +21,12 @@ class MenuState extends FlxState
 		var _loop = FlxG.sound.load("assets/music/Theme-4H.wav", 1, true);
 		_loop.play();
 
-		_playButton = new FlxButton(300, 310, "Start game", clickPlay);
-		// _playButton.screenCenter();
+		_playButton = new FlxButton(0, 0, "Start game", clickPlay);
+		_creditButton = new FlxButton(0, 0, "Credits", openCredits);
+		_playButton.screenCenter();
+		_creditButton.screenCenter();
+		_creditButton.y = 330;
 
-		_creditButton = new FlxButton(300, 330, "Credits", openCredits);
 
 		add(_playButton);
 		add(_creditButton);
@@ -36,12 +38,11 @@ class MenuState extends FlxState
 		super.update(elapsed);
 	}
 	
-	function clickPlay():Void
+	function clickPlay():Void {
 		FlxG.switchState(new TextState());
 	}
 
 	function openCredits():Void {
 		FlxG.switchState(new Credits());
 	}
-
 }
