@@ -60,7 +60,7 @@ class PlayState3 extends FlxState
 		data = haxe.Json.parse(content);
 		
 		// music
-		var _loop = FlxG.sound.load("assets/music/Theme-3H.wav", 1, true);
+		var _loop = FlxG.sound.load("assets/music/Theme-5H.wav", 1, true);
 		_loop.play();
 		
 		// add map

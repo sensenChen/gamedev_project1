@@ -23,6 +23,7 @@ class TextState2 extends FlxState
 
         text = new flixel.text.FlxText(50, 50, 500, "Oh, you poor unlovable creature...You’re so close! But, as of course you know, the last person standing in your way - is you!", 19);
         text.screenCenter();
+        text.y = 100;
         add(text);
     }
 
