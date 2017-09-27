@@ -205,7 +205,7 @@ class PlayState3 extends FlxState
 			add(heart4);
 			_player.health++;
 			_hud.updateHUD(_player.health);
-			FlxG.switchState(new BossState());
+			FlxG.switchState(new TextState2());
 		}
 		if (FlxG.overlap(_player, h1)) {
 			count++;
